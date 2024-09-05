@@ -1,0 +1,12 @@
+:root {
+    --font-family: "DIN Condensed", sans-serif;
+    --second-family: "DIN Alternate", sans-serif;
+    --third-family: "Inter", sans-serif;
+
+    --color-white: #fff;
+    --color-purple-dark: #462b74;
+    --color-purple-light: #8885d7;
+    --color-purple-super-light: #E0DFFF;
+    --color-pink: #E94C28;
+
+  }

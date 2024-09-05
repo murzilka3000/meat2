@@ -1,0 +1,183 @@
+@import url('/css/variables.css');
+
+
+
+footer {
+    position: absolute;
+    padding: 0 20px;
+    right: 0;
+    left: 0;
+    bottom: 32px;
+}
+
+.footer_wrapper {
+    display: flex;
+}
+
+.footer_wrapper > :first-child {
+    flex: 2;
+    background-color: var(--color-purple-light);
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    justify-content: center;
+    padding: 55px 0;
+}
+
+.footer-logo {
+    width: 100%;
+}
+
+.footer_wrapper > :last-child {
+    flex: 3;
+    background-color: var(--color-purple-dark);
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+}
+
+.footer_nav-container {
+    display: flex;
+    gap: 49px;
+}
+
+.footer_nav-container nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer_nav-container nav li a {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.footer_right-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.footer_contact-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_contact-container a {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-white);
+    text-decoration: none;
+    margin-bottom: 18px;
+}
+
+.footer_contact-container button {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 110%;
+    text-align: center;
+    color: var(--color-white);
+    border: 2px solid var(--color-purple-light);
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 12px 68px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавляем плавный переход для трансформации и тени */
+}
+
+.footer_contact-container button:hover {
+    transform: scale(1.05) rotate(3deg); /* Увеличиваем и немного поворачиваем кнопку при наведении */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
+}
+
+.footer-flex-a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-text p {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--color-white);
+}
+
+@media screen and (max-width: 1043px) {
+    .footer_nav-container {
+        gap: 19px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .footer_wrapper > :last-child {
+        padding: 50px 50px;
+    }
+}
+
+@media screen and (max-width: 901px) {
+    .footer_wrapper > :last-child {
+        padding: 50px 30px;
+    }
+}
+
+@media screen and (max-width: 832px) {
+    .footer_wrapper {
+        flex-direction: column;
+    }
+
+    .footer_wrapper > :first-child {
+        padding: 21px 0;
+        border-radius: 20px;
+        z-index: 2;
+    }
+
+    .footer_wrapper > :last-child {
+        border-radius: 0 0 20px 20px;
+        margin-top: -30px;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 552px) {
+    .footer_right-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 31px;
+    }
+
+    .footer-text {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer_nav-container {
+        margin-bottom: 51px;
+        gap: 80px;
+    }
+
+    .footer_contact-container {
+        align-items: center;
+    }
+
+    .footer-logo {
+        width: 70%;
+    }
+
+    .footer_wrapper > :first-child a {
+        display: flex;
+        justify-content: center;
+    }
+}

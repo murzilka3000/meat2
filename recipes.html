@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/recipes.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div>
+                    <a href="/">
+                        <img class="header_logo" src="/images/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="header_button-container">
+                    <button>
+                        <img src="/images/buttonOneHeader.svg" alt="">
+                        <span>Каталог</span>
+                    </button>
+                    <button>
+                        <img src="/images/buttonTwoHeader.svg" alt="">
+                        <span>Акции</span>
+                    </button>
+                </div>
+                <nav class="header_nav">
+                    <li><a href="">Где купить</a></li>
+                    <li><a href="/recipes.html">Рецепты</a></li>
+                    <li><a href="">Мясной блог</a></li>
+                    <li><a href="">Контакты</a></li>
+                    <li><a href="">О нас</a></li>
+                </nav>
+                <div class="header_burger-menu" id="hamburger">
+                    <img src="/images/burger.svg" alt="">
+                </div>
+                <div class="menu" id="menu">
+                    <div>
+                        <h3>Меню</h3>
+                        <button id="close" class="close">
+                            <img src="/images/close.svg" alt="">
+                        </button>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Каталог</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Где купить</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Рецепты</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Мясной блог</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Контакты</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>О нас</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero_recipes">
+            <div class="hero_recipes-padding">
+                <div class="hero_recipes_wrapper">
+                    <video id="background-video" autoplay muted loop>
+                        <source src="/video/test.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+                <div class="play-pause-btn-container">
+                    <button class="play-pause-btn" id="play-pause-btn">
+                        <img id="play-icon" src="/images/play.svg" alt="Play" style="display: none;">
+                        <img id="pause-icon" src="/images/stop.svg" alt="Pause" style="display: none;">
+                    </button>
+                </div>
+            </div>
+            <section class="useful hero_recipes-padding">
+                <div class="wrapper">
+                    <div class="useful_wrapper">
+                        <div>
+                            <div class="useful_item">
+                                <div class="useful_item-bg1 useful_item-bg"></div>
+                                <div>
+                                    <p class="useful_item-text">
+                                        Свинина в кисло-сладком соусе с ананасом
+                                    </p>
+                                    <div class="useful_item-time_container">
+                                        <img src="/images/time.svg" alt="">
+                                        <p class="useful_item-text">80 минут</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="useful_item">
+                                <div class="useful_item-bg2 useful_item-bg"></div>
+                                <div>
+                                    <p class="useful_item-text">
+                                        Свинина, с  картофелем и шампиньонами
+                                    </p>
+                                    <div class="useful_item-time_container">
+                                        <img src="/images/time.svg" alt="">
+                                        <p class="useful_item-text">65 минут</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="useful_item">
+                                <div class="useful_item-bg3 useful_item-bg"></div>
+                                <div>
+                                    <p class="useful_item-text">
+                                        Гуляш из свиной вырезки с томатным соусом
+                                    </p>
+                                    <div class="useful_item-time_container">
+                                        <img src="/images/time.svg" alt="">
+                                        <p class="useful_item-text">80 минут</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="useful-img2"  src="/images/шеф рекомендует.svg" alt="">
+                            <img class="useful-img1" src="/images/Шеф 1.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="recipes_filters">
+            <div class="wrapper">
+                <div class="recipes_filters_wrapper">
+                    <div class="filters">
+                        <div class="custom-dropdown">
+                            <button class="dropdown-button">Выберите подборки</button>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" value="collection1"> Подборка 1</label>
+                                <label><input type="checkbox" value="collection2"> Подборка 2</label>
+                                <label><input type="checkbox" value="collection3"> Подборка 3</label>
+                            </div>
+                        </div>
+                        <div class="custom-dropdown">
+                            <button class="dropdown-button">Выберите категории</button>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" value="category1"> Категория 1</label>
+                                <label><input type="checkbox" value="category2"> Категория 2</label>
+                                <label><input type="checkbox" value="category3"> Категория 3</label>
+                            </div>
+                        </div>
+                        <div class="custom-dropdown">
+                            <button class="dropdown-button">Выберите время готовки</button>
+                            <div class="dropdown-content">
+                                <label><input type="checkbox" value="short"> Меньше 30 минут</label>
+                                <label><input type="checkbox" value="medium"> 30-60 минут</label>
+                                <label><input type="checkbox" value="long"> Больше 60 минут</label>
+                            </div>
+                        </div>
+                        <button id="filterButton">Фильтровать</button>
+                        <button id="resetButton">Сбросить</button>
+                    </div>
+                    <div class="cards">
+                        <div class="card" data-collection="collection1" data-category="category1" data-time="short">
+                            <div class="useful_item">
+                                <div class="useful_item-bg1 useful_item-bg"></div>
+                                <div>
+                                    <p class="useful_item-text">
+                                        Свинина в кисло-сладком соусе с ананасом
+                                    </p>
+                                    <div class="useful_item-time_container">
+                                        <img src="/images/time.svg" alt="">
+                                        <p class="useful_item-text">80 минут</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" data-collection="collection2" data-category="category2" data-time="medium">Карточка 2</div>
+                        <div class="card" data-collection="collection1" data-category="category1" data-time="long">Карточка 3</div>
+                        <div class="card" data-collection="collection3" data-category="category3" data-time="short">Карточка 4</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/recipes.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>проект мясо</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div>
+                    <a href="/">
+                        <img class="header_logo" src="/images/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="header_button-container">
+                    <button>
+                        <img src="/images/buttonOneHeader.svg" alt="">
+                        <span>Каталог</span>
+                    </button>
+                    <button>
+                        <img src="/images/buttonTwoHeader.svg" alt="">
+                        <span>Акции</span>
+                    </button>
+                </div>
+                <nav class="header_nav">
+                    <li><a href="">Где купить</a></li>
+                    <li><a href="/recipes.html">Рецепты</a></li>
+                    <li><a href="">Мясной блог</a></li>
+                    <li><a href="">Контакты</a></li>
+                    <li><a href="">О нас</a></li>
+                </nav>
+                <div class="header_burger-menu" id="hamburger">
+                    <img src="/images/burger.svg" alt="">
+                </div>
+                <div class="menu" id="menu">
+                    <div>
+                        <h3>Меню</h3>
+                        <button id="close" class="close">
+                            <img src="/images/close.svg" alt="">
+                        </button>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Каталог</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Где купить</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Рецепты</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Мясной блог</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>Контакты</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/images/liBurger.svg" alt="">
+                                <p>О нас</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-home">
+        <section class="hero">
+            <div class="wrapper">
+                <div class="hero_container">
+                    <div class="hero_left-block">
+                        <div>
+                            <h1 id="mainTitle">{titles}</h1>
+                            <h2 id="subTitle">{subtitles}</h2>
+                        </div>
+                        <a id="hero_link" href="" class="pink-button">Наши акции</a>
+                        <div id="dotsContainer"></div>
+                    </div>
+                    <div class="hero_right-block">
+                        <div class="hero_button-container">
+                            <button id="prevButton">
+                                <img src="/images/arrowLefit.svg" alt="Предыдущий">
+                            </button>
+                            <button id="nextButton">
+                                <img src="/images/arrowRight.svg" alt="Следующий">
+                            </button>
+                        </div>
+                        <img id="sliderImage" src={images} alt="Слайд">
+                    </div>
+                </div>
+            </div>
+            <section class="slider">
+                <div class="wrapper">
+                    <div class="slider_wrapper">
+                        <div>
+                            <h2 class="slider_title">Наши <br> главные <br> ценности</h2>
+                        </div>
+                        <div class="my-swiper-container-1 swiper-container">
+                            <div class="swiper-wrapper swiper-wrapper_left">
+                                <div class="swiper-slide my-swiper-slide">
+                                    <div class="slide-content">
+                                        <div>
+                                            <h2>Качество</h2>
+                                            <img src="/images/s1.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Мы сами производим комбикорм, выращиваем животных 
+                                                и обрабатываем свинину, а затем надёжно упаковываем 
+                                                мясо и быстро доставляем в магазины
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide my-swiper-slide">
+                                    <div class="slide-content">
+                                        <div>
+                                            <h2>ВКУС</h2>
+                                            <img src="/images/s2.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Мы добавляем пряности и маринуем мясо, чтобы вы 
+                                                могли наслаждаться
+                                                и привычными вкусами, и новыми необычными сочетаниями
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide my-swiper-slide">
+                                    <div class="slide-content">
+                                        <div>
+                                            <h2>Разнообразие</h2>
+                                            <img src="/images/s3.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <p>
+                                                У нас есть десятки разных полуфабрикатов, чтобы 
+                                                вы могли каждый день готовить 
+                                                что-то новое и необычное
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="stores">
+            <div class="wrapper">
+                <div class="stores_wrapper">
+                    <h2 class="story_title">истории</h2>
+                    <div class="stores_bottom" id="openPopup">
+                        <div class="story_container story_container-one">
+                            <div class="story_block-top">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/skr.svg" alt="">
+                            </div>
+                            <div class="story_block-bottom">
+                                <div>
+                                    <h4>Рецепты</h4>
+                                </div>
+                                <div>
+                                    <img src="/images/play.svg" alt="">
+                                    <p>50 тыс.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story_container story_container-two">
+                            <div class="story_block-top">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/skr.svg" alt="">
+                            </div>
+                            <div class="story_block-bottom">
+                                <div>
+                                    <h4>Рецепты</h4>
+                                </div>
+                                <div>
+                                    <img src="/images/play.svg" alt="">
+                                    <p>50 тыс.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story_container story_container-three">
+                            <div class="story_block-top">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/hr.svg" alt="">
+                                <img src="/images/skr.svg" alt="">
+                            </div>
+                            <div class="story_block-bottom">
+                                <div>
+                                    <h4>Рецепты</h4>
+                                </div>
+                                <div>
+                                    <img src="/images/play.svg" alt="">
+                                    <p>50 тыс.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-overlay" id="popupOverlay"></div>
+                    <div class="custom-popup" id="custom-popup">
+                        <div class="custom-popup-content">
+                            <button class="custom-close-btn closeAll" id="custom-close-btn">
+                                <img src="images/close.svg" alt="">
+                            </button>
+                            <div class="flex-video">
+                                <div class="video-container">
+                                    <video id="story-video" loop autoplay muted>
+                                        <source src="" type="video/mp4">
+                                        Ваш браузер не поддерживает видео.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup">
+                        <div class="popup_wrapper">
+                            <div class="close-Container">
+                                <button id="closeAll" class="closeAll">
+                                    <img src="/images/close.svg" alt="">
+                                </button>
+                            </div>
+                            <div class="swiper-container popup_slider_container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-1" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-2" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-3" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-4" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-5" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide-3 popup_item" id="story_slide-6" data-video="/video/1109668_Stairs_Standard_1280x720.mp4">
+                                        <h4>Заголовок для рецепта</h4>
+                                    </div>
+                                </div>
+                                <!-- Кнопки навигации -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tab">
+            <div class="wrapper">
+                <div class="tab_wrapper">
+                    <div class="tab_top-container">
+                        <div>
+                            <h2 class="tab_title">Каталог</h2>
+                        </div>
+                        <div>
+                            <button id="tab1">Гриль</button>
+                            <button id="tab2">Фарш</button>
+                            <button id="tab3">Крупнокусковые</button>
+                            <button id="tab4">Мелкокусковые</button>
+                            <button id="tab5">Для запекания</button>
+                            <button id="tab6">Кулинария</button>
+                        </div>
+                    </div>
+                    <div class="tab_center-container">
+                        <h2>Гриль</h2>
+                        <a href="" id="section-link" class="pink-button">Перейти в раздел</a>
+                    </div>
+                    <div class="tab_img-container">
+                        <div class="tab_img-container-top">
+                            <img id="top-img-1" src="/images/tab1-1.svg" alt="">
+                            <img id="top-img-2" src="/images/tab-1-2.svg" alt="">
+                        </div>
+                        <div class="tab_img-container-bottom">
+                            <img id="bottom-img" src="/images/tab-1-3.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="partners">
+            <div class="wrapper partners-radius">
+                <div class="partners_wrapper">
+                    <div>
+                        <img src="/images/Logo_Яндекс Лавка.svg" alt="">
+                    </div>
+                    <div class="partners_heading-container">
+                        <img src="/images/buyPartner.svg" alt="">
+                        <h2 class="partners_mob-title">Где купить</h2>
+                    </div>
+                    <div>
+                        <img src="/images/perek.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/diksi.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/five.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/mag.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/lenta.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/sam.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="/images/ver.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="message">
+            <div class="wrapper">
+                <div class="message_wrapper">
+                    <div class="grid_message">
+                        <div></div>
+                        <div class="message_top-container">
+                            <h2 class="message_heading">Безопасность</h2>
+                            <div class="message__block message__block-top">
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="message_center-container">
+                        <div></div>
+                        <div>
+                            <h2 class="message_heading">Здоровье</h2>
+                            <div class="message__block message__block-center">
+                            </div>
+                        </div>
+                        <div>
+                            <img src="/images/messageLogo.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid_message">
+                        <div></div>
+                        <div class="message_end-container">
+                            <h2 class="message_heading">Качество</h2>
+                            <div class="message__block message__block-end">
+                            </div>
+                            <div>
+                                <a class="pink-button" href="">О нас</a>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <div class="footer_wrapper">
+                <div>
+                    <a href="/">
+                        <img class="footer-logo" src="/images/footerLogo.svg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <div class="footer_right-container">
+                        <div class="footer_nav-container">
+                            <nav>
+                                <li><a href="">Каталог</a></li>
+                                <li>
+                                    <a class="footer-flex-a" href="">
+                                        <img src="/images/buttonTwoHeader.svg" alt="">
+                                        <span>Акции</span>
+                                    </a>
+                                </li>
+                                <li><a href="/recipes.html">Рецепты</a></li>
+                                <li><a href="">Мясной блог</a></li>
+                            </nav>
+                            <nav>
+                                <li><a href="">О нас</a></li>
+                                <li><a href="">Контакты</a></li>
+                                <li><a href="">Где купить</a></li>
+                            </nav>
+                        </div>
+                        <div class="footer_contact-container">
+                            <a href="mailto:Samplemail@mail.ru">Samplemail@mail.ru</a>
+                            <button>Напишите нам</button>
+                        </div>
+                    </div>
+                    <div class="footer-text">
+                        <p>
+                            © <span id="current-year"></span>. Все права защищены. <br>
+                            ООО «Группа Компаний «Русагро».
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

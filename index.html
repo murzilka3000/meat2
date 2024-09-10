@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -30,11 +31,11 @@
                     </button>
                 </div>
                 <nav class="header_nav">
-                    <li><a href="">Где купить</a></li>
-                    <li><a href="/recipes.html">Рецепты</a></li>
-                    <li><a href="">Мясной блог</a></li>
-                    <li><a href="">Контакты</a></li>
-                    <li><a href="">О нас</a></li>
+                    <a id="buy" href="">Где купить</a>
+                    <a id="recipes" href="/recipes.html">Рецепты</a>
+                    <a id="blog" href="">Мясной блог</a>
+                    <a id="contacts" href="">Контакты</a>
+                    <a id="about" href="">О нас</a>
                 </nav>
                 <div class="header_burger-menu" id="hamburger">
                     <img src="/images/burger.svg" alt="">
@@ -91,8 +92,8 @@
     <main class="main-home">
         <section class="hero">
             <div class="wrapper">
-                <div class="hero_container">
-                    <div class="hero_left-block">
+                 <div class="hero_container">
+                    <div class="hero_left-block" id="gestureContainer">
                         <div>
                             <h1 id="mainTitle">{titles}</h1>
                             <h2 id="subTitle">{subtitles}</h2>
@@ -109,9 +110,26 @@
                                 <img src="/images/arrowRight.svg" alt="Следующий">
                             </button>
                         </div>
-                        <img id="sliderImage" src={images} alt="Слайд">
                     </div>
                 </div>
+                <div class="hero1">
+                    <div class="hero_button-container">
+                        <button id="prevButton2">
+                            <img src="/images/arrowLefit.svg" alt="Предыдущий">
+                        </button>
+                        <button id="nextButton2">
+                            <img src="/images/arrowRight.svg" alt="Следующий">
+                        </button>
+                    </div>
+                    <div class="hero_left-block" id="gestureContainer">
+                        <div>
+                            <h1 id="mainTitle2">{titles}</h1>
+                            <h2 id="subTitle2">{subtitles}</h2>
+                        </div>
+                        <a id="hero_link" href="" class="pink-button">Наши акции</a>
+                    </div>
+                </div>
+                <div class="dots-flex" id="dotsContainer2"></div>
             </div>
             <section class="slider">
                 <div class="wrapper">
@@ -119,55 +137,18 @@
                         <div>
                             <h2 class="slider_title">Наши <br> главные <br> ценности</h2>
                         </div>
-                        <div class="my-swiper-container-1 swiper-container">
-                            <div class="swiper-wrapper swiper-wrapper_left">
-                                <div class="swiper-slide my-swiper-slide">
-                                    <div class="slide-content">
-                                        <div>
-                                            <h2>Качество</h2>
-                                            <img src="/images/s1.svg" alt="">
-                                        </div>
-                                        <div>
-                                            <p>
-                                                Мы сами производим комбикорм, выращиваем животных 
-                                                и обрабатываем свинину, а затем надёжно упаковываем 
-                                                мясо и быстро доставляем в магазины
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide my-swiper-slide">
-                                    <div class="slide-content">
-                                        <div>
-                                            <h2>ВКУС</h2>
-                                            <img src="/images/s2.svg" alt="">
-                                        </div>
-                                        <div>
-                                            <p>
-                                                Мы добавляем пряности и маринуем мясо, чтобы вы 
-                                                могли наслаждаться
-                                                и привычными вкусами, и новыми необычными сочетаниями
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide my-swiper-slide">
-                                    <div class="slide-content">
-                                        <div>
-                                            <h2>Разнообразие</h2>
-                                            <img src="/images/s3.svg" alt="">
-                                        </div>
-                                        <div>
-                                            <p>
-                                                У нас есть десятки разных полуфабрикатов, чтобы 
-                                                вы могли каждый день готовить 
-                                                что-то новое и необычное
-                                            </p>
-                                        </div>
-                                    </div>
+                        <div class="my-swiper-container-1">
+                            <div class="slider-container5">
+                                <div class="sli-cont">
+                                    <img src="images/sli1.svg" alt="sli1"id="sli1">
+                                    <img src="images/sli2.svg" alt="sli2" id="sli2">
+                                    <img src="images/sli3.svg" alt="sli3" id="sli3">
+                                    <img src="images/mobK1.svg" alt="sli3" class="sli5">
+                                    <img src="images/mobK2.svg" alt="sli3" class="sli5">
+                                    <img src="images/mobK3.svg" alt="sli3" class="sli5">
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </section>
@@ -301,9 +282,11 @@
                             <button id="tab6">Кулинария</button>
                         </div>
                     </div>
-                    <div class="tab_center-container">
-                        <h2>Гриль</h2>
-                        <a href="" id="section-link" class="pink-button">Перейти в раздел</a>
+                    <div style="display: flex; justify-content: flex-end;" >
+                        <div class="tab_center-container">
+                            <h2 id="tab-title">Гриль</h2>
+                            <a href="" id="section-link" class="pink-button">Перейти в раздел</a>
+                        </div>
                     </div>
                     <div class="tab_img-container">
                         <div class="tab_img-container-top">
@@ -320,32 +303,36 @@
         <section class="partners">
             <div class="wrapper partners-radius">
                 <div class="partners_wrapper">
-                    <div>
-                        <img src="/images/Logo_Яндекс Лавка.svg" alt="">
+                    <div style="transition: transform 0.3s ease;">
+                        <div class="grid_item-partner custom-part">
+                            <img src="/images/Logo_Яндекс Лавка.svg" alt="">
+                        </div>
                     </div>
-                    <div class="partners_heading-container">
+                    <div class="partners_heading-container grid_item-partner">
                         <img src="/images/buyPartner.svg" alt="">
                         <h2 class="partners_mob-title">Где купить</h2>
                     </div>
-                    <div>
-                        <img src="/images/perek.svg" alt="">
+                    <div style="transition: transform 0.3s ease;">
+                        <div class="grid_item-partner custom-part">
+                            <img src="/images/perek.svg" alt="">
+                        </div>
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/diksi.svg" alt="">
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/five.svg" alt="">
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/mag.svg" alt="">
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/lenta.svg" alt="">
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/sam.svg" alt="">
                     </div>
-                    <div>
+                    <div class="grid_item-partner">
                         <img src="/images/ver.svg" alt="">
                     </div>
                 </div>
@@ -354,37 +341,29 @@
         <section class="message">
             <div class="wrapper">
                 <div class="message_wrapper">
-                    <div class="grid_message">
-                        <div></div>
-                        <div class="message_top-container">
+                    <div class="message-flex">
+                        <div>
                             <h2 class="message_heading">Безопасность</h2>
-                            <div class="message__block message__block-top">
-                            </div>
+                            <img src="images/messageCard-1.svg" alt="">
                         </div>
-                        <div></div>
                     </div>
-                    <div class="message_center-container">
-                        <div></div>
-                        <div>
+                    <div class="message-flex-bet">
+                        <div class="mes-img">
                             <h2 class="message_heading">Здоровье</h2>
-                            <div class="message__block message__block-center">
-                            </div>
+                            <img src="images/messageCard-2.svg" alt="">
                         </div>
-                        <div>
-                            <img src="/images/messageLogo.svg" alt="">
+                        <div class="mes-img">
+                            <img class="message-logo2" src="/images/messageLogo.svg" alt="">
                         </div>
                     </div>
-                    <div class="grid_message">
-                        <div></div>
-                        <div class="message_end-container">
+                    <div class="message-flex">
+                        <div>
                             <h2 class="message_heading">Качество</h2>
-                            <div class="message__block message__block-end">
-                            </div>
-                            <div>
-                                <a class="pink-button" href="">О нас</a>
-                            </div>
+                            <img src="images/messageCard-3.svg" alt="">
                         </div>
-                        <div></div>
+                    </div>
+                    <div class="message_button-container">
+                        <a class="pink-button" href="">О нас</a>
                     </div>
                 </div>
             </div>

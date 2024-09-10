@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 35px;
+    gap: 25px;
 }
 
 .header_button-container {
@@ -54,7 +54,7 @@
 }
 
 
-.header_nav li a {
+.header_nav a {
     text-decoration: none;
     color: var(--color-white);
     font-weight: 700;
@@ -62,8 +62,14 @@
     transition: opacity 0.3s ease;
 }
 
-.header_nav li a:hover {
-    opacity: 0.7;
+.header_nav a {
+    padding: 10px 15px;
+}
+
+.header_nav a:hover {
+    background: #462b74;
+    border-radius: 5px;
+    padding: 10px 15px;
 }
 
 .header_button-container  > :first-child {
@@ -186,3 +192,10 @@
     
 }
 /* hamburger menu end */
+
+
+.active-nav {
+    background: #462b74;
+    border-radius: 5px;
+    padding: 10px 15px;
+}

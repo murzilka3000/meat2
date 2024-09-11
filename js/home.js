@@ -305,8 +305,6 @@ if (tabs.length > 0) {
     switchTab(tabs[0].id);
 }
 
-// табы конец (нужно добавить анимацию при переключении fade-left)
-
 
 document.getElementById('popupOverlay').addEventListener('click', function() {
     var popup = document.getElementById('popup');
@@ -344,56 +342,84 @@ document.getElementById('custom-close-btn').addEventListener('click', function()
 
 
 
-function reorderImages() {
-    const container = document.querySelector('.sli-cont');
-    const images = Array.from(container.getElementsByTagName('img'));
-    const sli2 = document.getElementById('sli2');
-    
-    // Добавляем класс fade-left для плавного исчезновения и сдвига влево
-    sli2.classList.add('fade-left');
 
-    // После завершения анимации изменяем порядок изображений
-    sli2.addEventListener('transitionend', function() {
-        container.innerHTML = '';
-        const newOrder = images.slice(1).concat(images[0]);
-        newOrder.forEach(img => {
-            img.classList.remove('fade-left');
-            container.appendChild(img);
-        });
-    }, { once: true });
-}
+// let lastScrollPosition = 0;
+// let scrollThreshold = 80; // Количество пикселей для перестановки
 
-document.getElementById('sli1').addEventListener('click', reorderImages);
+// function reorderImages() {
+//     const container = document.querySelector('.sli-cont');
+//     const images = Array.from(container.getElementsByTagName('img'));
+
+//     // Проверяем, есть ли второй элемент в массиве
+//     if (images.length > 1) {
+//         const secondImage = images[1]; // Второе изображение
+//         secondImage.classList.add('fade-left');
+
+//         secondImage.addEventListener('transitionend', function () {
+//             container.innerHTML = ''; // Очищаем контейнер
+
+//             // Создаем новый порядок, перемещая второй элемент на первое место
+//             const newOrder = [secondImage].concat(images.slice(0, 1)).concat(images.slice(2));
+            
+//             newOrder.forEach(img => {
+//                 img.classList.remove('fade-left'); // Убираем класс анимации
+//                 container.appendChild(img); // Добавляем изображения в новом порядке
+//             });
+//         }, { once: true });
+//     }
+// }
+
+// window.addEventListener('scroll', function () {
+//     const currentScrollPosition = window.scrollY;
+
+//     // Проверяем, если прокрутка прошла пороговое значение
+//     if (Math.abs(currentScrollPosition - lastScrollPosition) >= scrollThreshold) {
+//         reorderImages();
+//         lastScrollPosition = currentScrollPosition; // Обновляем последнюю позицию прокрутки
+//     }
+// });
 
 
 
 
-function reorderImages(clickedImage) {
-    const container = document.querySelector('.sli-cont');
-    const images = Array.from(container.getElementsByTagName('img'));
-    
-    // Добавляем класс fade-left для плавного исчезновения и сдвига влево
-    clickedImage.classList.add('fade-left');
 
-    // После завершения анимации изменяем порядок изображений
-    clickedImage.addEventListener('transitionend', function() {
-        container.innerHTML = '';
-        const clickedIndex = images.indexOf(clickedImage);
-        const newOrder = images.slice(clickedIndex).concat(images.slice(1, clickedIndex));
-        newOrder.forEach(img => {
-            img.classList.remove('fade-left');
-            container.appendChild(img);
-        });
-    }, { once: true });
-}
+window.addEventListener('scroll', function() {
+    var image = document.getElementById('sli2');
+    var scrollPosition = window.scrollY;
 
-document.querySelectorAll('.sli-cont img').forEach(img => {
-    img.addEventListener('click', function() {
-        reorderImages(this);
-    });
+    if (scrollPosition >= 500) {
+        image.style.transform = 'translateX(-103%)';
+        image.style.opacity = '1'; // Установить непрозрачность на 1
+        image.style.height = '100%'; // Установить высоту на 100px
+    } else {
+        image.style.transform = 'translateX(0)';
+        image.style.opacity = '0'; // Установить прозрачность обратно
+        image.style.height = '100%'; // Вернуть высоту обратно
+    }
 });
 
+window.addEventListener('scroll', function() {
+    var image = document.getElementById('sli3');
+    var scrollPosition = window.scrollY;
 
+    if (scrollPosition >= 500) {
+        image.style.transform = 'translateX(-103%)';
+    } else {
+        image.style.transform = 'translateX(0)';
+    }
+});
 
+window.addEventListener('scroll', function() {
+    var image = document.getElementById('sli3');
+    var scrollPosition = window.scrollY;
 
-
+    if (scrollPosition >= 600) {
+        image.style.transform = 'translateX(-206%)';
+        image.style.opacity = '1'; // Установить непрозрачность на 1
+        image.style.height = '100%'; // Установить высоту на 100px
+    } else {
+        image.style.transform = 'translateX(0)';
+        image.style.opacity = '0'; // Установить прозрачность обратно
+        image.style.height = '100%'; // Вернуть высоту обратно
+    }
+});

@@ -223,7 +223,16 @@
     background: linear-gradient(180deg, var(--color-purple-dark) 0%, #8451DA 100%) no-repeat center center / cover;
     background-image: url('../images/bgtab2.jpg');
     min-height: 800px;
-    padding: 36px 20px 0 20px;
+    padding: 76px 20px 0 20px;
+    margin-top: -150px;
+    clip-path: polygon(300px 60px, 350px 0, 100% 0, 100% 100%, 0 100%, 0 0, 300px 0);}
+
+.tab::after {
+    content: "";
+    background-color: var(--color-pink);
+    clip-path: polygon(50% 0%, 0 0, 50% 100%);
+    position: absolute;
+    top: 0;
 }
 
 .tab_top-container {
@@ -288,7 +297,7 @@
 .tab_center-container h2 {
     font-family: var(--font-family);
     font-weight: 700;
-    font-size: 128px;
+    font-size: 80px;
     line-height: 100%;
     text-transform: uppercase;
     color: var(--color-white);
@@ -320,6 +329,16 @@
 
 #bottom-img, #top-img-1, #top-img-2 {
     width: 100%;
+}
+
+.tab_title-container {
+    margin-left: 50vw;
+}
+
+@media screen and (max-width: 767px) {
+    .tab_title-container {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 1198px) {
@@ -377,18 +396,52 @@
 /* partners start */
 
 .partners {
-    background: linear-gradient(0deg, #8784d6 0%, var(--color-purple-super-light) 100%);
-    border-radius: 0 0 70% 70%;
-    padding: 15px 20px 130px 20px;
+    
     z-index: 2;
     position: relative;
+    overflow: hidden;
+
+    /* background: url('../images/bgP.svg') top / contain no-repeat; */
  
+}
+
+.partners-radius {
+    background: linear-gradient(2deg, #8784D6 -13.2%, #E0DFFF 71.57%);
+    padding: 15px 20px 200px 20px;
+    width: 2000px;
+    border-radius: 0 0 100% 100%;
+    position: relative;
+    left: 50%; /* Сдвигаем элемент на 50% */
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1040px) {
+    .partners-radius {
+        background: url('/images/bgP.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        max-width: 100%;
+        border-radius: 0;
+        position: static;
+        left: 0;
+        transform: translateX(0%);
+        padding: 50px 20px 100px 20px;
+        margin: 0 auto;
+      
+    }
+
+    .partners {
+        padding: 0!important;
+    }
 }
 
 .partners_wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 50px;
+    column-gap: 80px;
+
 }
 
 .grid_item-partner{
@@ -401,9 +454,7 @@
     transition: transform 0.3s ease;
 }
 
-.custom-part:hover {
-    transform: scale(1.0000000001)!important;
-}
+
 
 .custom-part {
     margin-top: 40px;
@@ -414,6 +465,10 @@
 
 .partners_wrapper div:hover {
     transform: scale(1.1); /* Увеличиваем элемент на 10% при наведении */
+}
+
+.partners_heading-container:hover {
+    transform: none!important; 
 }
 
 .partners_heading-container {
@@ -444,16 +499,31 @@
     transform: rotate(-2deg);
 }
 
+.partners_wrapper > :nth-child(5), .partners_wrapper > :nth-child(8)  {
+    width: 80%;
+    justify-self: center;
+}
+
+.partners_wrapper > :nth-child(4) {
+    width: 80%;
+    justify-self: center;
+}
+
 .partners_wrapper > :nth-child(6) {
     transform: rotate(2deg);
+    width: 80%;
+    justify-self: center;
 }
 
 .partners_wrapper > :nth-child(7) {
     transform: rotate(-3deg);
+    width: 80%;
+    justify-self: end;
 }
 
 .partners_wrapper > :nth-child(9) {
     transform: rotate(-3deg);
+    width: 80%;
 }
 
 .partners_wrapper > :nth-child(8) {
@@ -495,6 +565,12 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        justify-self: start;
+    }
+
+    .partners_wrapper > * {
+        width: 100%;
+        justify-self: start!important;
     }
 
     .partners_wrapper div img {
@@ -502,7 +578,6 @@
     }
 
     .partners {
-        border-radius: 0 0 20% 20%;
         padding: 15px 20px 130px 20px;
     }
 
@@ -566,168 +641,9 @@
     -webkit-text-fill-color: transparent;
 }
 
-.message__block-top, .message__block-center, .message__block-end {
-    background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 220.5px;
-    max-width: 482px;
-}
-
-.message__block-top {
-    background-image: url('../images/message1.svg');
-}
-
-.message__block-center {
-    background-image: url('../images/message2.svg');
-}
-
-.message__block-end {
-    background-image: url('../images/message3.svg');
-}
-
-.message__block::after {
-    position: absolute;
-    max-width: 490px;
-    padding: 30px;
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 134%;
-    text-transform: uppercase;
-    color: var(--color-purple-dark);
-}
-
-.message__block-top::after {
-    content: "Мы разделываем мясо с учётом анатомии животных, нарезаем и упаковываем на современном европейском оборудовании";
-}
-
-.message__block-center::after {
-    content: 'Мы производим полуфабрикаты на заводах в экологически чистых регионах: Тамбовская область, Белгородская область и Приморский край';
-}
-
-.message__block-end::after {
-    content: 'Мы следуем международным стандартам санитарных норм, чтобы быть уверенными в качестве и пользе мяса, которое производим для вас';
-}
-
-.message_center-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-}
-
-.message_center-container > :nth-child(1) {
-    display: none;
-}
-
-.message_center-container > :nth-child(3) {
-    justify-self: end;
-}
-
-.grid_message {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-}
-
-.message_end-container > :nth-child(3) {
-    display: flex;
-    justify-content: center;
-    max-width: 456px;
-    margin-top: 20px;
-}
-
-.message_wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-@media screen and (max-width: 943px) {
-    .message_center-container > :nth-child(1) {
-        display: block;
-    }
-
-    .message_center-container > :nth-child(3) img {
-        display: none;
-    }
-
-    .message_center-container, .grid_message {
-        grid-template-columns: 20% 60% 20%;
-    }
-}
-
 @media screen and (max-width: 833px) {
     .message {
-        padding: 385px 20px 600px 20px;
-    }
-}
-
-@media screen and (max-width: 553px) {
-    .message {
-        padding: 385px 20px 700px 20px;
-    }
-}
-
-@media screen and (max-width: 868px) {
-    .message_center-container, .grid_message {
-        grid-template-columns: 15% 70% 15%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .message_heading {
-        font-size: 36px;
-    }
-
-    .message__block::after {
-        font-size: 14px;
-        max-width: 296px;
-        padding: 28px;
-    }
-
-    .message__block-top, .message__block-center, .message__block-end {
-        background-size: cover;
-        min-height: 138px;
-        max-width: 334.68px;
-    }
-
-    .message__block-top {
-        background-image: url('../images/message-mob1.svg');
-    }
-
-    .message__block-center {
-        background-image: url('../images/message-mob2.svg');
-    }
-
-    .message__block-end {
-        background-image: url('../images/message-mob1.svg');
-    }
-
-    .message_center-container, .grid_message {
-        grid-template-columns: 25% 50% 25%;
-    }
-}
-
-@media screen and (max-width: 710px) {
-    .message_center-container, .grid_message {
-        grid-template-columns: 15% 70% 15%;
-    }
-}
-
-@media screen and (max-width: 505px) {
-    .message_center-container, .grid_message {
-        grid-template-columns: 10% 80% 10%;
-    }
-}
-
-@media screen and (max-width: 444px) {
-    .message_center-container, .grid_message {
-        grid-template-columns: 5% 90% 5%;
-    }
-}
-
-@media screen and (max-width: 404px) {
-    .message_center-container, .grid_message {
-        grid-template-columns: 1% 98% 1%;
+        padding: 385px 20px 668px 20px;
     }
 }
 
@@ -843,7 +759,7 @@
 }
 
 .stores {
-    padding: 0 20px 130px 20px;
+    padding: 0 20px 380px 20px;
     margin-top: 1050px;
     background: linear-gradient(360deg, var(--color-pink) 0%, rgba(233, 76, 40, 0) 100%);
 }
@@ -1095,44 +1011,6 @@ video {
     padding: 30px 30px 50px 30px;
 }
 
-.my-swiper-slide div div h2 {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: #a2a0e2;
-}
-
-.my-swiper-slide div div p {
-    font-family: var(--second-family);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 130%;
-    color: #a2a0e2;
-}
-
-.my-swiper-slide-active div div p {
-    font-family: var(--second-family);
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 130%;
-    color: #fff;
-    max-width: 382px;
-}
-
-.my-swiper-slide-active div div h2 {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 72px;
-    line-height: 110%;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: #fff;
-
-}
-
 .my-swiper-slide-active {
     background: #462b74;
     transform: scale(1.2);
@@ -1159,8 +1037,6 @@ video {
     margin-top: 58px;
     overflow: hidden;
 }
-
-
 
 .slider_wrapper {
     display: flex;
@@ -1225,20 +1101,6 @@ video {
         
     }
 
-    .my-swiper-slide div div h2 {
-        font-size: 36px;
-        color: #fff;
-    }
-
-    .my-swiper-slide div div p {
-        font-size: 14px;
-        color: #fff;
-    }
-
-    .my-swiper-slide div div img {
-        max-width: 30%;
-    }
-
     .slider_wrapper {
         align-items: flex-start;
     }
@@ -1277,6 +1139,10 @@ video {
 
 .message_wrapper {
     padding: 0 20px;
+}
+
+.mes-img-hov img:hover {
+    transform: scale();
 }
 
 .mes-img img {
@@ -1458,24 +1324,25 @@ video {
     
 }
 
-.sli-cont > :nth-child(1) {
+.sli-cont img {
     margin-right: 20px;
 }
 
-.sli-cont > :nth-child(2) {
+#sli2, #sli3 {
     height: 280px;
     opacity: 0.5;
-    margin-top: 30px;
+  
 }
+
 
 .sli-cont img {
     transition: opacity 1.2s ease, transform 0.8s ease, height 1.2s ease;
 }
-  
-.sli-cont img.fade-left {
+
+/* img.fade-left {
     opacity: 1;
     transform: translateX(-117%) scale(1.22);
-}
+} */
 
 .sli5 {
     display: none;

@@ -77,3 +77,80 @@ document.getElementById('resetButton').addEventListener('click', function() {
         card.style.display = 'block';
     });
 });
+
+
+const cards = [
+    {
+      collection: "collection1",
+      category: "category1",
+      time: "short",
+      imgSrc: "/images/recepes/0_1 1.jpg",
+      title: "Колбаски с овощами в духовке",
+      timeText: "50 минут"
+    },
+    {
+      collection: "collection2",
+      category: "category2",
+      time: "medium",
+      imgSrc: "/images/recepes/0_3 1.jpg",
+      title: "Курица с рисом",
+      timeText: "30 минут"
+    },
+    {
+      collection: "collection3",
+      category: "category3",
+      time: "long",
+      imgSrc: "/images/recepes/card3.jpg",
+      title: "Стейк с картофелем",
+      timeText: "70 минут"
+    },
+    {
+    collection: "collection3",
+    category: "category3",
+    time: "long",
+    imgSrc: "/images/recepes/card4.jpg",
+    title: "Стейк с картофелем",
+    timeText: "70 минут"
+    },
+    {
+    collection: "collection3",
+    category: "category3",
+    time: "long",
+    imgSrc: "/images/recepes/card5.jpg",
+    title: "Стейк с картофелем",
+    timeText: "70 минут"
+    },
+    {
+    collection: "collection3",
+    category: "category3",
+    time: "long",
+    imgSrc: "/images/recepes/card6.jpg",
+    title: "Стейк с картофелем",
+    timeText: "70 минут"
+    },
+  ];
+  
+  const container = document.querySelector('.cards-container');
+  
+  cards.forEach(card => {
+    const div = document.createElement('div');
+    div.classList.add('card', 'cards-time');
+    div.setAttribute('data-collection', card.collection);
+    div.setAttribute('data-category', card.category);
+    div.setAttribute('data-time', card.time);
+  
+    div.innerHTML = `
+      <div class="card-img">
+        <img src="${card.imgSrc}" alt="">
+      </div>
+      <div>
+        <p class="useful_item-text">${card.title}</p>
+        <div class="useful_item-time_container">
+          <img src="/images/time.svg" alt="">
+          <p class="useful_item-text">${card.timeText}</p>
+        </div>
+      </div>
+    `;
+  
+    container.appendChild(div);
+  });

@@ -7,14 +7,25 @@ document.getElementById('openPopup').addEventListener('click', function() {
     overlay.classList.add('active');
 
     // Инициализация Swiper после того, как всплывающее окно становится видимым
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4, // Отображение 4 слайдов одновременно
-        spaceBetween: 40,
+    var swiper = new Swiper('.swiper-container', {// Отображение 4 слайдов одновременно
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-
+        breakpoints: {
+            1300: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+        },
 
     });
 });
@@ -290,7 +301,7 @@ function switchTab(activeTabId) {
     topImg1.classList.add('fade-left2');
     topImg2.classList.add('fade-left2');
     bottomImg.classList.add('fade-left2');
-    sectionLink.classList.add('fade-left2');
+    //sectionLink.classList.add('fade-left2');
     tabTitle.classList.add('fade-left2');
 }
 
@@ -322,72 +333,11 @@ document.getElementById('closeAll').addEventListener('click', function() {
 
 
 
-
-//окно истории
-document.querySelectorAll('.popup_item').forEach(item => {
-    item.addEventListener('click', function() {
-        const videoSrc = this.getAttribute('data-video');
-        const videoElement = document.getElementById('story-video');
-        videoElement.querySelector('source').setAttribute('src', videoSrc);
-        videoElement.load();
-        document.getElementById('custom-popup').style.display = 'flex';
-        videoElement.play();
-    });
-});
-
-document.getElementById('custom-close-btn').addEventListener('click', function() {
-    document.getElementById('custom-popup').style.display = 'none';
-    document.getElementById('story-video').pause();
-});
-
-
-
-
-// let lastScrollPosition = 0;
-// let scrollThreshold = 80; // Количество пикселей для перестановки
-
-// function reorderImages() {
-//     const container = document.querySelector('.sli-cont');
-//     const images = Array.from(container.getElementsByTagName('img'));
-
-//     // Проверяем, есть ли второй элемент в массиве
-//     if (images.length > 1) {
-//         const secondImage = images[1]; // Второе изображение
-//         secondImage.classList.add('fade-left');
-
-//         secondImage.addEventListener('transitionend', function () {
-//             container.innerHTML = ''; // Очищаем контейнер
-
-//             // Создаем новый порядок, перемещая второй элемент на первое место
-//             const newOrder = [secondImage].concat(images.slice(0, 1)).concat(images.slice(2));
-            
-//             newOrder.forEach(img => {
-//                 img.classList.remove('fade-left'); // Убираем класс анимации
-//                 container.appendChild(img); // Добавляем изображения в новом порядке
-//             });
-//         }, { once: true });
-//     }
-// }
-
-// window.addEventListener('scroll', function () {
-//     const currentScrollPosition = window.scrollY;
-
-//     // Проверяем, если прокрутка прошла пороговое значение
-//     if (Math.abs(currentScrollPosition - lastScrollPosition) >= scrollThreshold) {
-//         reorderImages();
-//         lastScrollPosition = currentScrollPosition; // Обновляем последнюю позицию прокрутки
-//     }
-// });
-
-
-
-
-
 window.addEventListener('scroll', function() {
     var image = document.getElementById('sli2');
     var scrollPosition = window.scrollY;
 
-    if (scrollPosition >= 500) {
+    if (scrollPosition >= 400) {
         image.style.transform = 'translateX(-103%)';
         image.style.opacity = '1'; // Установить непрозрачность на 1
         image.style.height = '100%'; // Установить высоту на 100px
@@ -402,7 +352,7 @@ window.addEventListener('scroll', function() {
     var image = document.getElementById('sli3');
     var scrollPosition = window.scrollY;
 
-    if (scrollPosition >= 500) {
+    if (scrollPosition >= 400) {
         image.style.transform = 'translateX(-103%)';
     } else {
         image.style.transform = 'translateX(0)';
@@ -413,7 +363,7 @@ window.addEventListener('scroll', function() {
     var image = document.getElementById('sli3');
     var scrollPosition = window.scrollY;
 
-    if (scrollPosition >= 600) {
+    if (scrollPosition >= 500) {
         image.style.transform = 'translateX(-206%)';
         image.style.opacity = '1'; // Установить непрозрачность на 1
         image.style.height = '100%'; // Установить высоту на 100px
@@ -422,4 +372,42 @@ window.addEventListener('scroll', function() {
         image.style.opacity = '0'; // Установить прозрачность обратно
         image.style.height = '100%'; // Вернуть высоту обратно
     }
+});
+
+
+document.getElementById("stoty-1").addEventListener("click", function() {
+    changeImagePath('s1');
+  });
+  
+  document.getElementById("stoty-2").addEventListener("click", function() {
+    changeImagePath('s2');
+  });
+  
+  document.getElementById("stoty-3").addEventListener("click", function() {
+    changeImagePath('s3');
+  });
+  
+  function changeImagePath(newPathSegment) {
+    const slides = document.querySelectorAll('.swiper-slide img');
+    
+    slides.forEach(function(img) {
+      // Определяем текущий сегмент пути
+      const currentPathSegment = img.src.match(/\/s[0-9]+\//);
+      
+      if (currentPathSegment) {
+        // Заменяем текущий сегмент пути на новый
+        img.src = img.src.replace(currentPathSegment[0], `/${newPathSegment}/`);
+      }
+    });
+  }
+
+
+$(document).ready(function() {
+$('[data-fancybox="gallery"]').fancybox({
+    loop: true,
+    buttons: [
+        "zoom",
+        "close"
+    ],
+});
 });

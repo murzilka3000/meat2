@@ -333,46 +333,7 @@ document.getElementById('closeAll').addEventListener('click', function() {
 
 
 
-window.addEventListener('scroll', function() {
-    var image = document.getElementById('sli2');
-    var scrollPosition = window.scrollY;
 
-    if (scrollPosition >= 400) {
-        image.style.transform = 'translateX(-103%)';
-        image.style.opacity = '1'; // Установить непрозрачность на 1
-        image.style.height = '100%'; // Установить высоту на 100px
-    } else {
-        image.style.transform = 'translateX(0)';
-        image.style.opacity = '0'; // Установить прозрачность обратно
-        image.style.height = '100%'; // Вернуть высоту обратно
-    }
-});
-
-window.addEventListener('scroll', function() {
-    var image = document.getElementById('sli3');
-    var scrollPosition = window.scrollY;
-
-    if (scrollPosition >= 400) {
-        image.style.transform = 'translateX(-103%)';
-    } else {
-        image.style.transform = 'translateX(0)';
-    }
-});
-
-window.addEventListener('scroll', function() {
-    var image = document.getElementById('sli3');
-    var scrollPosition = window.scrollY;
-
-    if (scrollPosition >= 500) {
-        image.style.transform = 'translateX(-206%)';
-        image.style.opacity = '1'; // Установить непрозрачность на 1
-        image.style.height = '100%'; // Установить высоту на 100px
-    } else {
-        image.style.transform = 'translateX(0)';
-        image.style.opacity = '0'; // Установить прозрачность обратно
-        image.style.height = '100%'; // Вернуть высоту обратно
-    }
-});
 
 
 document.getElementById("stoty-1").addEventListener("click", function() {
@@ -411,3 +372,141 @@ $('[data-fancybox="gallery"]').fancybox({
     ],
 });
 });
+
+
+//слайдер с наложением
+
+
+// let isScrollLocked = false;
+// let lastScrollTop = 0; // Для хранения позиции скролла
+
+// function lockScroll() {
+//     lastScrollTop = window.scrollY; // Сохраняем текущую позицию
+
+//     // Блокируем прокрутку
+//     document.documentElement.style.overflow = 'hidden'; // Отключаем скролл на уровне html
+//     document.body.style.overflow = 'hidden';            // Отключаем скролл на уровне body
+
+//     isScrollLocked = true; // Устанавливаем флаг блокировки
+// }
+
+// function unlockScroll() {
+//     // Снимаем блокировку прокрутки
+//     document.documentElement.style.overflow = ''; // Восстанавливаем скролл на уровне html
+//     document.body.style.overflow = '';            // Восстанавливаем скролл на уровне body
+
+//     // Возвращаемся к сохраненной позиции скролла
+//     window.scrollTo(0, lastScrollTop);
+
+//     isScrollLocked = false; // Снимаем блокировку
+// }
+
+// window.addEventListener('scroll', function onScroll() {
+//     if (!isScrollLocked && window.scrollY >= 500) {
+//         lockScroll();
+
+//         // Проигрываем анимацию для элемента #sli2
+//         var image2 = document.getElementById('sli2');
+//         image2.style.transform = 'translateX(-103%)';
+//         image2.style.opacity = '1'; 
+//         image2.style.height = '100%';
+
+//         // Проигрываем вторую анимацию через 4 секунды
+//         setTimeout(() => {
+//             var image3 = document.getElementById('sli3');
+//             image3.style.transform = 'translateX(-206%)';
+//             image3.style.opacity = '1'; 
+//             image3.style.height = '100%';
+
+//             // Разблокируем скролл через 2 секунды после второй анимации
+//             setTimeout(() => {
+//                 unlockScroll(); // Разблокируем скролл
+
+//                 // Убираем обработчик scroll, чтобы предотвратить повторное срабатывание
+//                 window.removeEventListener('scroll', onScroll);
+//             }, 0);
+//         }, 2000); // Задержка 4 секунды для второй анимации
+//     }
+// });
+
+
+let isScrollLocked = false;
+let lastScrollTop = 0; // Для хранения позиции скролла
+let virtualScroll = 0; // Виртуальная позиция скролла
+const scrollStep = 10; // Шаг для виртуального скролла
+
+function lockScroll() {
+    lastScrollTop = window.scrollY; // Сохраняем текущую позицию
+
+    // Блокируем реальную прокрутку
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+
+    isScrollLocked = true; // Устанавливаем флаг блокировки
+}
+
+function unlockScroll() {
+    // Снимаем блокировку прокрутки
+    document.documentElement.style.overflow = ''; 
+    document.body.style.overflow = '';            
+
+    // Возвращаемся к сохраненной позиции скролла
+    window.scrollTo(0, lastScrollTop);
+
+    isScrollLocked = false; // Снимаем блокировку
+}
+
+function handleVirtualScroll(event) {
+    if (isScrollLocked) {
+        // Рассчитываем виртуальный скролл в зависимости от движения колесика мыши
+        const delta = event.deltaY;
+        virtualScroll += delta * 0.1; // Можете менять этот множитель для скорости анимации
+
+        // Ограничиваем виртуальный скролл до значений, чтобы не уходить слишком далеко
+        virtualScroll = Math.max(0, virtualScroll);
+        
+        // Привязываем виртуальный скролл к анимации
+        const image2 = document.getElementById('sli2');
+        const image3 = document.getElementById('sli3');
+        
+        if (virtualScroll >= 0 && virtualScroll < 100) {
+            image2.style.transform = `translateX(${Math.max(-103 - virtualScroll, -103)}%)`;
+            image2.style.opacity = (virtualScroll / 100).toString();
+            image2.style.height = `${100 + virtualScroll}%`;
+        }
+
+        if (virtualScroll >= 100 && virtualScroll < 200) {
+            const scrollFactor = virtualScroll - 100;
+            image3.style.transform = `translateX(${Math.max(-206 - scrollFactor, -206)}%)`;
+            image3.style.opacity = (scrollFactor / 100).toString();
+            image3.style.height = `${100 + scrollFactor}%`;
+        }
+
+        // Останавливаем событие на реальном скролле
+        event.preventDefault();
+    }
+}
+
+window.addEventListener('scroll', function onScroll() {
+    if (!isScrollLocked && window.scrollY >= 400) {
+        lockScroll();
+
+        // Проигрываем анимацию для элемента #sli2
+        var image2 = document.getElementById('sli2');
+        image2.style.transform = 'translateX(-103%)';
+        image2.style.opacity = '1'; 
+        image2.style.height = '100%';
+
+        // Начинаем слушать виртуальный скролл через колесо мыши
+        window.addEventListener('wheel', handleVirtualScroll);
+
+        // Убираем обработчик скролла, чтобы предотвратить повторное срабатывание
+        window.removeEventListener('scroll', onScroll);
+    }
+});
+
+// Разблокируем скролл через таймер или при завершении анимации
+setTimeout(() => {
+    unlockScroll();
+    window.removeEventListener('wheel', handleVirtualScroll);
+}, 6000); // Примерный таймер для завершения анимаций

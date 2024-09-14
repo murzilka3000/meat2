@@ -1,16 +1,13 @@
 @import url('/css/variables.css');
 
 .hero_recipes {
-    background: linear-gradient(180deg, #8784D6 30.37%, rgba(135, 132, 214, 0.00) 94.21%);
+    /* background: linear-gradient(180deg, #8784D6 30.37%, rgba(135, 132, 214, 0.00) 94.21%); */
+    background: #8784D6;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     padding: 158px 0px 0 0px;
-}
-
-.hero_recipes-padding {
-    padding: 0 20px;
 }
 
 .hero_recipes_wrapper video {
@@ -22,7 +19,7 @@
 
 .hero_recipes .play-pause-btn {
     position: absolute;
-    top: calc(50% - 230px);
+    top: 55%;
     z-index: 5;
     background-color: transparent;
     color: white;
@@ -44,7 +41,9 @@
 /* useful start */
 
 .useful {
-    padding-top: 5%;
+    padding: 150px 20px 0 20px;
+    margin-top: 450px;
+    background: linear-gradient(180deg, #8784D6 30.37%, rgba(135, 132, 214, 0.00) 94.21%);
 }
 
 .useful_wrapper {
@@ -105,6 +104,10 @@
     margin-bottom: 0;
 }
 
+.cards-container .cards-time:nth-child(2n) {
+    background: linear-gradient(180deg, #462b74 0%, #8451da 100%);
+}
+
 .useful_item > :last-child {
     display: flex;
     flex-direction: column;
@@ -137,7 +140,6 @@
 
 .recipes_filters {
     background: #E0DFFF;
-    margin-top: 1000px;
     z-index: 999;
     padding: 44px 20px 450px 20px;
 }
@@ -148,6 +150,7 @@
     display: flex;
     justify-content: center;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
 .custom-dropdown {
@@ -215,7 +218,7 @@
     line-height: normal;
 }
 
-#filterButton {
+.filterButton {
     display: flex;
     padding: 10px 16px;
     align-items: center;
@@ -232,7 +235,7 @@
     margin-bottom: 15px;
 }
 
-#resetButton {
+.resetButton {
     background-color: transparent;
     border: none;
     display: flex;
@@ -277,6 +280,250 @@
     margin: 0!important;
 }
 
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.load-more-container button {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
 
 /* recipes_filters end */
+
+
+@media screen and (max-width: 1025px) {
+    .useful_wrapper {
+        flex-direction: column;
+    }
+
+    .useful_wrapper > :last-child  {
+        align-items: flex-end;
+    }
+
+
+    .useful-img1 {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 856px) {
+    
+    .useful {
+        margin-top: 400px;
+    }
+}
+
+@media screen and (max-width: 833px) {
+    .recipes_filters {
+        padding: 44px 20px 650px 20px;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .useful {
+        margin-top: 350px;
+    }
+}
+
+.swiper-container {
+    display: none;
+}
+
+.filters_mob {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+    .useful_wrapper > :first-child {
+        display: none;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px; /* Можно указать фиксированную ширину для слайдов */
+    }
+    
+    .useful_item {
+        width: 100%; /* Сделайте блоки внутри слайдов адаптивными */
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .useful {
+        margin-top: 150px;
+    }
+
+    .filters {
+        display: none;
+    }
+
+    .filters_mob {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #462B74;
+        padding: 16px 20px;
+        border-radius: 12px;
+        margin-bottom: 31px;
+    }
+
+    .filters_mob button  {
+        background-color: transparent;
+        border: none;
+    }
+
+    .filters_mob h5 {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 552px) {
+    .recipes_filters {
+        padding: 44px 20px 750px 20px;
+    }
+}
+
+.popup {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup.active {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(70, 43, 116, 1);
+    overflow-y: auto;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#closePopup {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+
+    .popup-header h5 {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 26px;
+        color: #fff;
+    }
+
+    .popup-content2 {
+        background: #f0f0f0;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+
+    .dropdown-content-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .dropdown-content-mobile label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .dropdown-content-mobile label p {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 160%;
+        color: #462b74;
+    }
+
+    .dropdown-content-mobile label input {
+        margin: 0;
+    }
+
+    .popup-content2 h6 {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        color: #462b74;
+        margin-bottom: 22px;
+    }
+
+    .popup-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #f0f0f0;
+        position: sticky;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 12px 12px 0 0;
+        padding: 20px;
+    }
+
+    .popup-bottom > :first-child {
+        display: flex;
+        gap: 11px;
+        border: 0;
+        align-items: center;
+    }
+
+    .popup-bottom > :first-child { 
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 14px;
+        color: #8451da;
+    }
+
+    .popup-bottom > :last-child {
+        display: flex;
+        gap: 11px;
+        border: 0;
+    }
+
+    .popup > :first-child {
+        padding: 20px 20px 50px 20px;
+    }
+}
 

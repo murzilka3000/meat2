@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/recipes.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/recipe-template/recipe-template.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <header class="header">
@@ -104,54 +104,100 @@
                     </button>
                 </div>
             </div>
-            <section class="useful hero_recipes-padding">
-                <div class="wrapper">
-                    <div class="useful_wrapper">
-                        <div>
-                            <div class="useful_item">
-                                <div class="useful_item-bg1 useful_item-bg"></div>
-                                <div>
-                                    <p class="useful_item-text">
-                                        Свинина в кисло-сладком соусе с ананасом
-                                    </p>
-                                    <div class="useful_item-time_container">
-                                        <img src="/images/time.svg" alt="">
-                                        <p class="useful_item-text">80 минут</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="useful_item">
-                                <div class="useful_item-bg2 useful_item-bg"></div>
-                                <div>
-                                    <p class="useful_item-text">
-                                        Свинина, с  картофелем и шампиньонами
-                                    </p>
-                                    <div class="useful_item-time_container">
-                                        <img src="/images/time.svg" alt="">
-                                        <p class="useful_item-text">65 минут</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="useful_item">
-                                <div class="useful_item-bg3 useful_item-bg"></div>
-                                <div>
-                                    <p class="useful_item-text">
-                                        Гуляш из свиной вырезки с томатным соусом
-                                    </p>
-                                    <div class="useful_item-time_container">
-                                        <img src="/images/time.svg" alt="">
-                                        <p class="useful_item-text">80 минут</p>
-                                    </div>
+        </section>
+        <section class="useful hero_recipes-padding">
+            <div class="wrapper">
+                <div class="useful_wrapper">
+                    <div>
+                        <div class="useful_item">
+                            <div class="useful_item-bg1 useful_item-bg"></div>
+                            <div>
+                                <p class="useful_item-text">
+                                    Свинина в кисло-сладком соусе с ананасом
+                                </p>
+                                <div class="useful_item-time_container">
+                                    <img src="/images/time.svg" alt="">
+                                    <p class="useful_item-text">80 минут</p>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <img class="useful-img2"  src="/images/шеф рекомендует.svg" alt="">
-                            <img class="useful-img1" src="/images/Шеф 1.svg" alt="">
+                        <div class="useful_item">
+                            <div class="useful_item-bg2 useful_item-bg"></div>
+                            <div>
+                                <p class="useful_item-text">
+                                    Свинина, с картофелем и шампиньонами
+                                </p>
+                                <div class="useful_item-time_container">
+                                    <img src="/images/time.svg" alt="">
+                                    <p class="useful_item-text">65 минут</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="useful_item">
+                            <div class="useful_item-bg3 useful_item-bg"></div>
+                            <div>
+                                <p class="useful_item-text">
+                                    Гуляш из свинойвырезки с томатным соусом
+                                </p>
+                                <div class="useful_item-time_container">
+                                    <img src="/images/time.svg" alt="">
+                                    <p class="useful_item-text">80 минут</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="useful_item">
+                                    <div class="useful_item-bg1 useful_item-bg"></div>
+                                    <div>
+                                        <p class="useful_item-text">
+                                            Свинина в кисло-сладком соусе с ананасом
+                                        </p>
+                                        <div class="useful_item-time_container">
+                                            <img src="/images/time.svg" alt="">
+                                            <p class="useful_item-text">80 минут</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="useful_item">
+                                    <div class="useful_item-bg2 useful_item-bg"></div>
+                                    <div>
+                                        <p class="useful_item-text">
+                                            Свинина, с картофелем и шампиньонами
+                                        </p>
+                                        <div class="useful_item-time_container">
+                                            <img src="/images/time.svg" alt="">
+                                            <p class="useful_item-text">65 минут</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="useful_item">
+                                    <div class="useful_item-bg3 useful_item-bg"></div>
+                                    <div>
+                                        <p class="useful_item-text">
+                                            Гуляш из свинойвырезки с томатным соусом
+                                        </p>
+                                        <div class="useful_item-time_container">
+                                            <img src="/images/time.svg" alt="">
+                                            <p class="useful_item-text">80 минут</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="useful-img2"  src="/images/шеф рекомендует.svg" alt="">
+                        <img class="useful-img1" src="/images/Шеф 1.svg" alt="">
+                    </div>
                 </div>
-            </section>
+            </div>
         </section>
         <section class="recipes_filters">
             <div class="wrapper">
@@ -166,16 +212,24 @@
                                 <div class="dropdown-content">
                                     <label>
                                         <input type="checkbox" value="collection1">
-                                        <p>Подборка 1</p>
+                                        <p>Шеф рекомендует</p>
                                     </label> <br>
                                     <label>
                                         <input type="checkbox" value="collection2">
-                                        <p>Подборка 2</p>
+                                        <p>На шашлыки</p>
                                     </label> <br>
                                     <label>
-                                        <input type="checkbox" value="collection3">
-                                        <p>Подборка 3</p>
+                                        <input type="checkbox" value="collection3"> 
+                                        <p>К празднику</p>
                                     </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="collection4"> 
+                                        <p>Детям</p>
+                                    </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="collection5"> 
+                                        <p>За 20 минут</p>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -188,16 +242,24 @@
                                 <div class="dropdown-content">
                                     <label>
                                         <input type="checkbox" value="category1">
-                                        <p>Категория 1</p>
+                                        <p>Гриль</p>
                                     </label> <br>
                                     <label>
                                         <input type="checkbox" value="category2">
-                                        <p>Категория 2</p>
+                                        <p>Фарш</p>
                                     </label> <br>
                                     <label>
                                         <input type="checkbox" value="category3"> 
-                                        <p>Категория 3</p>
+                                        <p>Крупнокусковые</p>
                                     </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="category4"> 
+                                        <p>Мелкокусковые</p>
+                                    </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="category5"> 
+                                        <p>Для запекания</p>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -209,30 +271,143 @@
                             <div class="dropdown-content-2">
                                 <div class="dropdown-content">
                                     <label>
-                                        <input type="checkbox" value="short">
-                                        <p>Меньше 30 минут</p>
+                                        <input type="checkbox" value="15">
+                                        <p>15 минут</p>
                                     </label> <br>
                                     <label>
-                                        <input type="checkbox" value="medium">
-                                        <p>30-60 минут</p>
+                                        <input type="checkbox" value="30">
+                                        <p>30 минут</p>
                                     </label> <br>
                                     <label>
-                                        <input type="checkbox" value="long">
-                                        <p>Больше 60 минут</p>
+                                        <input type="checkbox" value="60"> 
+                                        <p>60 минут</p>
                                     </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="90"> 
+                                        <p>90 минут</p>
+                                    </label> <br>
+                                    <label>
+                                        <input type="checkbox" value="120"> 
+                                        <p>120+ минут</p>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <button id="filterButton">Показать</button>
-                        <button id="resetButton">
+                        <button class="filterButton">Показать</button>
+                        <button class="resetButton">
                             <img src="/images/close-filter.svg" alt="">
                             <p>Очистить всё</p>
                         </button>
                     </div>
+                    <div class="filters_mob">
+                        <h5>Фильтры</h5>
+                        <button id="openPopup">
+                            <img src="/images/filtermob.svg" alt="">
+                        </button>
+                    </div>
                     <div class="cards-container"></div>
+                    <div class="load-more-container">
+                        <button class="pink-button" id="load-more">
+                            Загрузить больше
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
+        <div class="popup">
+            <div>
+                <div class="popup-header">
+                    <h5>Фильтры</h5>
+                    <button class="closeAll" id="closePopup">
+                        <img src="/images/close.svg" alt="">
+                    </button>
+                </div>
+                <div class="popup-content2">
+                    <h6>Подборки</h6>
+                    <div class="dropdown-content-mobile">
+                        <label>
+                            <input type="checkbox" value="collection1">
+                            <p>Шеф рекомендует</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="collection2">
+                            <p>На шашлыки</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="collection3"> 
+                            <p>К празднику</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="collection4"> 
+                            <p>Детям</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="collection5"> 
+                            <p>За 20 минут</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="popup-content2">
+                    <h6>Категория</h6>
+                    <div class="dropdown-content-mobile">
+                        <label>
+                            <input type="checkbox" value="category1">
+                            <p>Гриль</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="category2">
+                            <p>Фарш</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="category3"> 
+                            <p>Крупнокусковые</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="category4"> 
+                            <p>Мелкокусковые</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="category5"> 
+                            <p>Для запекания</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="popup-content2">
+                    <h6>Время готовки</h6>
+                    <div class="dropdown-content-mobile">
+                        <label>
+                            <input type="checkbox" value="15">
+                            <p>15 минут</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="30">
+                            <p>30 минут</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="60"> 
+                            <p>60 минут</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="90"> 
+                            <p>90 минут</p>
+                        </label>
+                        <label>
+                            <input type="checkbox" value="120"> 
+                            <p>120+ минут</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-bottom">
+                <button class="resetButton">
+                    <img src="/images/recepes/closeFilter2.svg" alt="">
+                    <p>Очистить всё</p>
+                </button>
+                <button class="pink-button filterButton">
+                    <p>Показать</p>
+                </button>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="wrapper">
@@ -277,6 +452,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="/js/data-cards.js"></script>
+    <script type="module" src="/js/cards.js"></script>
     <script src="/js/recipes.js"></script>
     <script src="/js/app.js"></script>
 </body>

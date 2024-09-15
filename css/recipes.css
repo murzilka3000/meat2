@@ -360,7 +360,8 @@
     }
     
     .useful_item {
-        width: 100%; /* Сделайте блоки внутри слайдов адаптивными */
+        width: 100%;
+        height: auto;
     }
 
     .cards-container {

@@ -72,15 +72,8 @@ document.querySelectorAll('.filterButton').forEach(button => {
 });
 
 document.querySelectorAll('.resetButton').forEach(button => {
-    button.addEventListener('click', function() {
-        // Снимаем все чекбоксы
-        document.querySelectorAll('.dropdown-content input:checked').forEach(checkbox => checkbox.checked = false);
-        
-        // Показываем все карточки
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.style.display = 'block';
-        });
+    button.addEventListener('click', () => {
+        window.location.reload();
     });
 });
 

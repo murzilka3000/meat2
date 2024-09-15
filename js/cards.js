@@ -12,7 +12,7 @@ var swiper = new Swiper('.swiper-container', {
 
 
 
-//обработчики  загрузки карточек
+// //обработчики  загрузки карточек
 
 
 const ITEMS_PER_PAGE = 6;

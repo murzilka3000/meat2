@@ -377,136 +377,66 @@ $('[data-fancybox="gallery"]').fancybox({
 //слайдер с наложением
 
 
-// let isScrollLocked = false;
-// let lastScrollTop = 0; // Для хранения позиции скролла
-
-// function lockScroll() {
-//     lastScrollTop = window.scrollY; // Сохраняем текущую позицию
-
-//     // Блокируем прокрутку
-//     document.documentElement.style.overflow = 'hidden'; // Отключаем скролл на уровне html
-//     document.body.style.overflow = 'hidden';            // Отключаем скролл на уровне body
-
-//     isScrollLocked = true; // Устанавливаем флаг блокировки
-// }
-
-// function unlockScroll() {
-//     // Снимаем блокировку прокрутки
-//     document.documentElement.style.overflow = ''; // Восстанавливаем скролл на уровне html
-//     document.body.style.overflow = '';            // Восстанавливаем скролл на уровне body
-
-//     // Возвращаемся к сохраненной позиции скролла
-//     window.scrollTo(0, lastScrollTop);
-
-//     isScrollLocked = false; // Снимаем блокировку
-// }
-
 // window.addEventListener('scroll', function onScroll() {
-//     if (!isScrollLocked && window.scrollY >= 500) {
-//         lockScroll();
-
-//         // Проигрываем анимацию для элемента #sli2
+//     const scrollY = window.scrollY;  // Текущая позиция скролла
+//     const triggerPoint = 300;        // Точка начала анимации первой карточки
+    
+//     // Обрабатываем первую карточку (id 'sli2')
+//     if (scrollY >= triggerPoint) {
 //         var image2 = document.getElementById('sli2');
-//         image2.style.transform = 'translateX(-103%)';
+//         var offset2 = Math.min(scrollY - triggerPoint, 103);  // Сдвигаем напрямую, без делителя
+//         image2.style.transform = `translateX(-${offset2}%)`;
 //         image2.style.opacity = '1'; 
 //         image2.style.height = '100%';
+//     }
 
-//         // Проигрываем вторую анимацию через 4 секунды
-//         setTimeout(() => {
-//             var image3 = document.getElementById('sli3');
-//             image3.style.transform = 'translateX(-206%)';
-//             image3.style.opacity = '1'; 
-//             image3.style.height = '100%';
+//     // Обрабатываем вторую карточку (id 'sli3')
+//     if (scrollY >= triggerPoint + 10) {  // Почти сразу начинаем анимацию второй карточки
+//         var image3 = document.getElementById('sli3');
+//         var offset3 = Math.min(scrollY - (triggerPoint + 10), 206);  // Сдвигаем напрямую, без делителя
+//         image3.style.transform = `translateX(-${offset3}%)`;
+//         image3.style.opacity = '1'; 
+//         image3.style.height = '100%';
+//         image3.style.zIndex = '2';  // Поднимаем выше первой карточки
+//     }
 
-//             // Разблокируем скролл через 2 секунды после второй анимации
-//             setTimeout(() => {
-//                 unlockScroll(); // Разблокируем скролл
-
-//                 // Убираем обработчик scroll, чтобы предотвратить повторное срабатывание
-//                 window.removeEventListener('scroll', onScroll);
-//             }, 0);
-//         }, 2000); // Задержка 4 секунды для второй анимации
+//     // Для наложения: чем больше скроллим, тем выше должна быть карточка
+//     if (scrollY >= triggerPoint) {
+//         image2.style.zIndex = '1';  // Задний план
 //     }
 // });
 
-
-let isScrollLocked = false;
-let lastScrollTop = 0; // Для хранения позиции скролла
-let virtualScroll = 0; // Виртуальная позиция скролла
-const scrollStep = 10; // Шаг для виртуального скролла
-
-function lockScroll() {
-    lastScrollTop = window.scrollY; // Сохраняем текущую позицию
-
-    // Блокируем реальную прокрутку
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-
-    isScrollLocked = true; // Устанавливаем флаг блокировки
-}
-
-function unlockScroll() {
-    // Снимаем блокировку прокрутки
-    document.documentElement.style.overflow = ''; 
-    document.body.style.overflow = '';            
-
-    // Возвращаемся к сохраненной позиции скролла
-    window.scrollTo(0, lastScrollTop);
-
-    isScrollLocked = false; // Снимаем блокировку
-}
-
-function handleVirtualScroll(event) {
-    if (isScrollLocked) {
-        // Рассчитываем виртуальный скролл в зависимости от движения колесика мыши
-        const delta = event.deltaY;
-        virtualScroll += delta * 0.1; // Можете менять этот множитель для скорости анимации
-
-        // Ограничиваем виртуальный скролл до значений, чтобы не уходить слишком далеко
-        virtualScroll = Math.max(0, virtualScroll);
-        
-        // Привязываем виртуальный скролл к анимации
-        const image2 = document.getElementById('sli2');
-        const image3 = document.getElementById('sli3');
-        
-        if (virtualScroll >= 0 && virtualScroll < 100) {
-            image2.style.transform = `translateX(${Math.max(-103 - virtualScroll, -103)}%)`;
-            image2.style.opacity = (virtualScroll / 100).toString();
-            image2.style.height = `${100 + virtualScroll}%`;
-        }
-
-        if (virtualScroll >= 100 && virtualScroll < 200) {
-            const scrollFactor = virtualScroll - 100;
-            image3.style.transform = `translateX(${Math.max(-206 - scrollFactor, -206)}%)`;
-            image3.style.opacity = (scrollFactor / 100).toString();
-            image3.style.height = `${100 + scrollFactor}%`;
-        }
-
-        // Останавливаем событие на реальном скролле
-        event.preventDefault();
-    }
-}
-
 window.addEventListener('scroll', function onScroll() {
-    if (!isScrollLocked && window.scrollY >= 400) {
-        lockScroll();
-
-        // Проигрываем анимацию для элемента #sli2
+    const scrollY = window.scrollY;  // Текущая позиция скролла
+    const triggerPoint = 300;        // Точка начала анимации первой карточки
+    
+    // Обрабатываем первую карточку (id 'sli2')
+    if (scrollY >= triggerPoint) {
         var image2 = document.getElementById('sli2');
-        image2.style.transform = 'translateX(-103%)';
-        image2.style.opacity = '1'; 
+        var offset2 = Math.min(scrollY - triggerPoint, 103);  // Сдвигаем напрямую
+        var scale2 = Math.min(1 + (scrollY - triggerPoint) / 500, 1); // Увеличение до 100%
+        var opacity2 = Math.min((scrollY - triggerPoint) / 100, 1);   // Прозрачность до 1
+        
+        image2.style.transform = `translateX(-${offset2}%) scale(${scale2})`;
+        image2.style.opacity = `${opacity2}`; 
         image2.style.height = '100%';
+    }
 
-        // Начинаем слушать виртуальный скролл через колесо мыши
-        window.addEventListener('wheel', handleVirtualScroll);
+    // Обрабатываем вторую карточку (id 'sli3')
+    if (scrollY >= triggerPoint + 50) {  // Начинаем через 50px скролла для третьей карточки
+        var image3 = document.getElementById('sli3');
+        var offset3 = Math.min(scrollY - (triggerPoint + 50), 206);  // Сдвиг третьей карточки
+        var scale3 = Math.min(1 + (scrollY - (triggerPoint + 50)) / 500, 1); // Увеличение до 100% для третьей карточки
+        var opacity3 = Math.min((scrollY - (triggerPoint + 50)) / 100, 1);   // Прозрачность до 1 для третьей карточки
+        
+        image3.style.transform = `translateX(-${offset3}%) scale(${scale3})`;
+        image3.style.opacity = `${opacity3}`; 
+        image3.style.height = '100%';
+        image3.style.zIndex = '2';  // Поднимаем выше второй карточки
+    }
 
-        // Убираем обработчик скролла, чтобы предотвратить повторное срабатывание
-        window.removeEventListener('scroll', onScroll);
+    // Для наложения: чем больше скроллим, тем выше должна быть карточка
+    if (scrollY >= triggerPoint) {
+        image2.style.zIndex = '1';  // Задний план для второй карточки
     }
 });
-
-// Разблокируем скролл через таймер или при завершении анимации
-setTimeout(() => {
-    unlockScroll();
-    window.removeEventListener('wheel', handleVirtualScroll);
-}, 6000); // Примерный таймер для завершения анимаций

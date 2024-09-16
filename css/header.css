@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 25px;
+    gap: 15px;
 }
 
 .header_button-container {

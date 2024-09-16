@@ -59,7 +59,9 @@ function renderCards(container, cardsArray) {
         <img src="${card.imgSrc}" alt="">
       </div>
       <div>
-        <p class="useful_item-text">${card.title}</p>
+        <a style='text-decoration: none' href="/recipe-template.html" class="card-title">
+          <p class="useful_item-text">${card.title}</p>
+        </a>
         <div class="useful_item-time_container">
           <img src="/images/time.svg" alt="">
           <p class="useful_item-text">${card.timeText}</p>

@@ -252,3 +252,154 @@
 }
 
 /* stages end */
+
+.stages-tabs-wrapper {
+  max-width: 776px;
+  margin: 0 auto;
+}
+
+.stages-tabs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+
+.stages-tabs-container h2 {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  color: #462b74;
+}
+
+.stages-tabs-container > :nth-child(2) {
+  display: flex;
+}
+
+.stages-tabs-button1, .stages-tabs-button2 {
+  flex: 1;
+}
+
+.stages-tabs-button1 {
+  border: 3px solid #462b74;
+  padding: 10px;
+  border-radius: 0 16px 0 0;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  margin-bottom: 10px;
+  margin-right: -3px;
+}
+
+.stages-tabs-button2 {
+  border: 3px solid #462b74;
+  padding: 10px;
+  border-radius: 0 16px 0 16px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  margin-top: 10px;
+}
+
+
+
+
+.stages-tabs-button1 button {
+  border-radius: 13px;
+  background: #462b74;
+  border: none;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+}
+
+.stages-tabs-button2 button {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  color: #462b74;
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Стиль для активной кнопки */
+.stages-tabs-button1 button.active {
+  background-color: #462b74;
+  color: #fff;
+}
+
+.stages-tabs-button2 button.active {
+  background-color: #462b74;
+  color: #fff;
+}
+
+/* Стиль для неактивных кнопок */
+.stages-tabs-button1 button, 
+.stages-tabs-button2 button {
+  background-color: transparent;
+  color: #462b74;
+  border-radius: 16px;
+}
+
+.stages-tab2 {
+  position: relative; /* Устанавливаем относительное позиционирование для родителя */
+}
+
+.play-pause-btn-container {
+  position: absolute; /* Абсолютное позиционирование внутри родителя */
+  top: 50%; /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translate(-50%, -50%); /* Смещаем элемент на 50% от его размеров для точного центрирования */
+}
+
+.play-pause-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.stages-tab2 {
+  display: none;
+}
+
+.stages-not-tab-active  {
+  display: none;
+}
+
+.stages-tab-active {
+  display: flex;
+}
+
+.cards-container5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.cards-container5 > :nth-child(2), .cards-container5 > :nth-child(4) {
+  background: linear-gradient(180deg, #462b74 0%, #8451da 100%);
+}
+
+.recommendations {
+  background-color: #E0DFFF;
+  padding-bottom: 400px;
+}
+
+.recommendations-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 89%;
+  text-transform: uppercase;
+  color: #462b74;
+  margin-bottom: 40px;
+}
+
+.recommendations-title span {
+  font-size: 50px;
+}

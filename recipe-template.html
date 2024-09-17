@@ -105,7 +105,7 @@
                         <stop offset="1" stop-color="#8451DA"/>
                       </linearGradient>
                     </defs>
-                  </svg>
+                </svg>
             </div>
         </section>
         <section class="ingredients">
@@ -187,12 +187,20 @@
         </section>
         <section class="stages">
             <div class="wrapper">
-                <h2>Этапы приготовления</h2>
-                <div>
-                    <button>Текст</button>
-                    <button>Видео</button>
+                <div class="stages-tabs-wrapper">
+                    <div class="stages-tabs-container">
+                        <h2>Этапы приготовления</h2>
+                        <div>
+                            <div class="stages-tabs-button1">
+                                <button id="stages-tab1-btn">Текст</button>
+                            </div>
+                            <div class="stages-tabs-button2">
+                                <button id="stages-tab2-btn">Видео</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stages-tab1">
+                <div id="stages-tab1" class="stages-tab1">
                    <div class="stages-tab1-item">
                         <div>
                             <p>1</p>
@@ -252,20 +260,90 @@
                         </div>
                     </div>
                 </div>
-                <div class="stages-tab2"></div>
+                <div id="stages-tab2" class="stages-tab2">
+                    <div class="hero_recipes_wrapper">
+                        <video id="background-video" autoplay muted loop>
+                            <source src="/video/test.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </div>
+                    <div class="play-pause-btn-container">
+                        <button class="play-pause-btn" id="play-pause-btn">
+                            <img id="play-icon" src="/images/play-video.svg" alt="Play" style="display: none;">
+                            <img id="pause-icon" src="/images/stop.svg" alt="Pause" style="display: none;">
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="recommendations">
             <div class="wrapper">
-                <h2>
+                <h2 class="recommendations-title">
                     <span>Рекомендуем </span> <br>
                     попробовать
                 </h2>
-                <div class="cards-container"></div>
+                <div class="cards-container5">
+                    <div class="card cards-time" data-collection="collection5" data-category="category5" data-time="120">
+                        <div class="card-img">
+                          <img src="/images/recepes/card5.jpg" alt="">
+                        </div>
+                        <div>
+                          <a style="text-decoration: none" href="/recipe-template.html" class="card-title">
+                            <p class="useful_item-text">Стейк с картофелем</p>
+                          </a>
+                          <div class="useful_item-time_container">
+                            <img src="/images/time.svg" alt="">
+                            <p class="useful_item-text">120 минут</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card cards-time" data-collection="collection5" data-category="category5" data-time="120">
+                        <div class="card-img">
+                          <img src="/images/recepes/card5.jpg" alt="">
+                        </div>
+                        <div>
+                          <a style="text-decoration: none" href="/recipe-template.html" class="card-title">
+                            <p class="useful_item-text">Стейк с картофелем</p>
+                          </a>
+                          <div class="useful_item-time_container">
+                            <img src="/images/time.svg" alt="">
+                            <p class="useful_item-text">120 минут</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card cards-time" data-collection="collection5" data-category="category5" data-time="120">
+                        <div class="card-img">
+                          <img src="/images/recepes/card5.jpg" alt="">
+                        </div>
+                        <div>
+                          <a style="text-decoration: none" href="/recipe-template.html" class="card-title">
+                            <p class="useful_item-text">Стейк с картофелем</p>
+                          </a>
+                          <div class="useful_item-time_container">
+                            <img src="/images/time.svg" alt="">
+                            <p class="useful_item-text">120 минут</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card cards-time" data-collection="collection5" data-category="category5" data-time="120">
+                        <div class="card-img">
+                          <img src="/images/recepes/card5.jpg" alt="">
+                        </div>
+                        <div>
+                          <a style="text-decoration: none" href="/recipe-template.html" class="card-title">
+                            <p class="useful_item-text">Стейк с картофелем</p>
+                          </a>
+                          <div class="useful_item-time_container">
+                            <img src="/images/time.svg" alt="">
+                            <p class="useful_item-text">120 минут</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <!-- <footer>
+    <footer>
         <div class="wrapper">
             <div class="footer_wrapper">
                 <div>
@@ -307,9 +385,9 @@
                 </div>
             </div>
         </div>
-    </footer> -->
-    <script type="module" src="/js/data-cards.js"></script>
-    <script type="module" src="/js/cards.js"></script>
+    </footer>
+    <script src="/js/recipe-template.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/recipes.js"></script>
 </body>
 </html>

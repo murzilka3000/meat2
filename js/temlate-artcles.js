@@ -61,13 +61,29 @@ nextBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.swiper-container2', {
-        slidesPerView: 3, // Number of slides per view
+        slidesPerView: 2.5, // Number of slides per view
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next2',
         },
-        loop: true, // Enable continuous loop mode
-        // Add more Swiper options as needed
+        loop: true,
+        breakpoints: {
+            732: {
+                slidesPerView: 3,
+            },
+            732: {
+                slidesPerView: 3,
+            },
+            634: {
+                slidesPerView: 2.2,
+            },
+            502: {
+                slidesPerView: 2,
+            },
+            1: {
+                slidesPerView: 1.3,
+            },
+        }
     });
 });
 

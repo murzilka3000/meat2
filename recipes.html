@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/recipes.css">
     <link rel="stylesheet" href="/css/recipe-template/recipe-template.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -31,7 +32,7 @@
                 </div>
                 <nav class="header_nav">
                     <li><a href="">Где купить</a></li>
-                    <li><a href="/recipes.html">Рецепты</a></li>
+                    <li><a href="/recipes2.html">Рецепты</a></li>
                     <li><a href="/blog.html">Мясной блог</a></li>
                     <li><a href="">Контакты</a></li>
                     <li><a href="">О нас</a></li>
@@ -109,7 +110,7 @@
             <div class="wrapper">
                 <div class="useful_wrapper">
                     <div>
-                        <div class="useful_item">
+                        <div data-aos="fade-right" class="useful_item">
                             <div class="useful_item-bg1 useful_item-bg"></div>
                             <div>
                                 <p class="useful_item-text">
@@ -121,7 +122,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="useful_item">
+                        <div data-aos="fade-down" class="useful_item">
                             <div class="useful_item-bg2 useful_item-bg"></div>
                             <div>
                                 <p class="useful_item-text">
@@ -133,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="useful_item">
+                        <div data-aos="fade-left" class="useful_item">
                             <div class="useful_item-bg3 useful_item-bg"></div>
                             <div>
                                 <p class="useful_item-text">
@@ -194,7 +195,7 @@
                     </div>
                     <div>
                         <img class="useful-img2"  src="/images/шеф рекомендует.svg" alt="">
-                        <img class="useful-img1" src="/images/Шеф 1.svg" alt="">
+                        <img class="useful-img1" src="/images/povar6.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -305,7 +306,7 @@
                             <img src="/images/filtermob.svg" alt="">
                         </button>
                     </div>
-                    <div class="cards-container"></div>
+                    <div data-aos="zoom-in" class="cards-container"></div>
                     <div class="load-more-container">
                         <button class="pink-button" id="load-more">
                             Загрузить больше
@@ -452,6 +453,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="/js/data-cards.js"></script>
     <script type="module" src="/js/cards.js"></script>

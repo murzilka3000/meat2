@@ -93,7 +93,7 @@ let currentFilter = 'all'; // Текущий фильтр
 function renderCards(cards) {
     cards.forEach(card => {
         const cardElement = `
-            <div class="hero_blog-card">
+            <div data-aos="zoom-in" class="hero_blog-card">
                 <div class="hero_blog-card-img">
                     <img src="${card.imgSrc}" alt="">
                 </div>
@@ -103,7 +103,9 @@ function renderCards(cards) {
                         <span>${card.date}</span>
                     </div>
                     <div class="hero_blog-card-text">
-                        <p>${card.text}</p>
+                        <a href="/template-articles.html">
+                            <p>${card.text}</p>
+                        </a>
                     </div>
                 </div>
             </div>

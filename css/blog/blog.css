@@ -286,6 +286,10 @@
     padding: 0 20px 400px 20px;
 }
 
+.hero_blog-card-text a {
+    text-decoration: none;
+}
+
 .blog-video-wrapper {
     position: relative; /* Устанавливаем относительное позиционирование для родителя */
 }

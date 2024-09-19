@@ -1,3 +1,35 @@
+//слайдер с наложением
+
+window.addEventListener('scroll', function onScroll() {
+    const scrollY = window.scrollY;  // Текущая позиция скролла
+    const triggerPoint = 300;        // Точка начала анимации первой карточки
+    
+    // Обрабатываем первую карточку (id 'sli2')
+    if (scrollY >= triggerPoint) {
+        var image2 = document.getElementById('sli2');
+        var offset2 = Math.min(scrollY - triggerPoint, 93);  // Сдвигаем напрямую
+        var scale2 = Math.min(1 + (scrollY - triggerPoint) / 500, 1); // Увеличение до 100%
+        var opacity2 = Math.min((scrollY - triggerPoint) / 100, 1);   // Прозрачность до 1
+        
+        image2.style.transform = `translateX(-${offset2}%) scale(${scale2})`;
+        image2.style.opacity = `${opacity2}`;
+        image2.style.zIndex = '1';  // Задний план для второй карточки
+    }
+
+    // Обрабатываем вторую карточку (id 'sli3')
+    if (scrollY >= triggerPoint + 50) {  // Начинаем через 50px скролла для третьей карточки
+        var image3 = document.getElementById('sli3');
+        var offset3 = Math.min(scrollY - (triggerPoint + 50), 190);  // Сдвиг третьей карточки
+        var scale3 = Math.min(1 + (scrollY - (triggerPoint + 50)) / 500, 1); // Увеличение до 100% для третьей карточки
+        var opacity3 = Math.min((scrollY - (triggerPoint + 50)) / 100, 1);   // Прозрачность до 1 для третьей карточки
+        
+        image3.style.transform = `translateX(-${offset3}%) scale(${scale3})`;
+        image3.style.opacity = `${opacity3}`; 
+        image3.style.zIndex = '2';  // Поднимаем выше второй карточки
+    }
+});
+
+
 
 // для слайдера историй
 document.getElementById('openPopup').addEventListener('click', function() {
@@ -12,17 +44,22 @@ document.getElementById('openPopup').addEventListener('click', function() {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        loop: true,               // Зацикливание
+        autoplay: {
+            delay: 10000,            // Задержка между переключениями (в миллисекундах)
+            disableOnInteraction: false,  // Не отключать автоплей при взаимодействии с пользователем
+        },
         breakpoints: {
             1300: {
-                slidesPerView: 4,
+                slidesPerView: 1,
                 spaceBetween: 40,
             },
             1200: {
-                slidesPerView: 3,
+                slidesPerView: 1,
                 spaceBetween: 20,
             },
             800: {
-                slidesPerView: 2,
+                slidesPerView: 1,
                 spaceBetween: 40,
             },
         },
@@ -82,48 +119,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function animateElements() {
-        mainTitle.classList.add('fade-out');
-        subTitle.classList.add('fade-out');
         hero1.classList.add('fade-out');
         heroContainer.classList.add('fade-out');
         if (mainTitle2) {
-            mainTitle2.classList.add('fade-out');
+            heroContainer.classList.add('fade-out');
+            hero1.classList.add('fade-out');
         }
         if (subTitle2) {
-            subTitle2.classList.add('fade-out');
+            heroContainer.classList.add('fade-out');
+            hero1.classList.add('fade-out');
         }
 
         setTimeout(() => {
             updateContent();
-            mainTitle.classList.remove('fade-out');
-            subTitle.classList.remove('fade-out');
             hero1.classList.remove('fade-out');
             heroContainer.classList.remove('fade-out');
             if (mainTitle2) {
-                mainTitle2.classList.remove('fade-out');
+              //  mainTitle2.classList.remove('fade-out');
+                heroContainer.classList.remove('fade-out');
+                hero1.classList.remove('fade-out');
             }
             if (subTitle2) {
-                subTitle2.classList.remove('fade-out');
+               // subTitle2.classList.remove('fade-out');
+                heroContainer.classList.remove('fade-out');
+                hero1.classList.remove('fade-out');
             }
 
-            mainTitle.classList.add('fade-in');
-            subTitle.classList.add('fade-in');
+            heroContainer.classList.add('fade-in');
+            hero1.classList.add('fade-in');
             if (mainTitle2) {
-                mainTitle2.classList.add('fade-in');
+               // mainTitle2.classList.add('fade-in');
+                heroContainer.classList.add('fade-in');
+                hero1.classList.add('fade-in');
             }
             if (subTitle2) {
-                subTitle2.classList.add('fade-in');
+              //  subTitle2.classList.add('fade-in');
+                heroContainer.classList.add('fade-in');
+                hero1.classList.add('fade-in');
             }
         }, 500); // Время должно совпадать с анимацией в CSS
 
         setTimeout(() => {
-            mainTitle.classList.remove('fade-in');
-            subTitle.classList.remove('fade-in');
+            heroContainer.classList.remove('fade-in');
+            hero1.classList.remove('fade-in');
             if (mainTitle2) {
-                mainTitle2.classList.remove('fade-in');
+              //  mainTitle2.classList.remove('fade-in');
+                heroContainer.classList.remove('fade-in');
+                hero1.classList.remove('fade-in');
             }
             if (subTitle2) {
-                subTitle2.classList.remove('fade-in');
+                heroContainer.classList.remove('fade-in');
+                hero1.classList.remove('fade-in');
             }
         }, 1000); // Время должно совпадать с анимацией в CSS
     }
@@ -360,83 +406,4 @@ document.getElementById("stoty-1").addEventListener("click", function() {
         img.src = img.src.replace(currentPathSegment[0], `/${newPathSegment}/`);
       }
     });
-  }
-
-
-$(document).ready(function() {
-$('[data-fancybox="gallery"]').fancybox({
-    loop: true,
-    buttons: [
-        "zoom",
-        "close"
-    ],
-});
-});
-
-
-//слайдер с наложением
-
-
-// window.addEventListener('scroll', function onScroll() {
-//     const scrollY = window.scrollY;  // Текущая позиция скролла
-//     const triggerPoint = 300;        // Точка начала анимации первой карточки
-    
-//     // Обрабатываем первую карточку (id 'sli2')
-//     if (scrollY >= triggerPoint) {
-//         var image2 = document.getElementById('sli2');
-//         var offset2 = Math.min(scrollY - triggerPoint, 103);  // Сдвигаем напрямую, без делителя
-//         image2.style.transform = `translateX(-${offset2}%)`;
-//         image2.style.opacity = '1'; 
-//         image2.style.height = '100%';
-//     }
-
-//     // Обрабатываем вторую карточку (id 'sli3')
-//     if (scrollY >= triggerPoint + 10) {  // Почти сразу начинаем анимацию второй карточки
-//         var image3 = document.getElementById('sli3');
-//         var offset3 = Math.min(scrollY - (triggerPoint + 10), 206);  // Сдвигаем напрямую, без делителя
-//         image3.style.transform = `translateX(-${offset3}%)`;
-//         image3.style.opacity = '1'; 
-//         image3.style.height = '100%';
-//         image3.style.zIndex = '2';  // Поднимаем выше первой карточки
-//     }
-
-//     // Для наложения: чем больше скроллим, тем выше должна быть карточка
-//     if (scrollY >= triggerPoint) {
-//         image2.style.zIndex = '1';  // Задний план
-//     }
-// });
-
-window.addEventListener('scroll', function onScroll() {
-    const scrollY = window.scrollY;  // Текущая позиция скролла
-    const triggerPoint = 300;        // Точка начала анимации первой карточки
-    
-    // Обрабатываем первую карточку (id 'sli2')
-    if (scrollY >= triggerPoint) {
-        var image2 = document.getElementById('sli2');
-        var offset2 = Math.min(scrollY - triggerPoint, 103);  // Сдвигаем напрямую
-        var scale2 = Math.min(1 + (scrollY - triggerPoint) / 500, 1); // Увеличение до 100%
-        var opacity2 = Math.min((scrollY - triggerPoint) / 100, 1);   // Прозрачность до 1
-        
-        image2.style.transform = `translateX(-${offset2}%) scale(${scale2})`;
-        image2.style.opacity = `${opacity2}`; 
-        image2.style.height = '100%';
-    }
-
-    // Обрабатываем вторую карточку (id 'sli3')
-    if (scrollY >= triggerPoint + 50) {  // Начинаем через 50px скролла для третьей карточки
-        var image3 = document.getElementById('sli3');
-        var offset3 = Math.min(scrollY - (triggerPoint + 50), 206);  // Сдвиг третьей карточки
-        var scale3 = Math.min(1 + (scrollY - (triggerPoint + 50)) / 500, 1); // Увеличение до 100% для третьей карточки
-        var opacity3 = Math.min((scrollY - (triggerPoint + 50)) / 100, 1);   // Прозрачность до 1 для третьей карточки
-        
-        image3.style.transform = `translateX(-${offset3}%) scale(${scale3})`;
-        image3.style.opacity = `${opacity3}`; 
-        image3.style.height = '100%';
-        image3.style.zIndex = '2';  // Поднимаем выше второй карточки
-    }
-
-    // Для наложения: чем больше скроллим, тем выше должна быть карточка
-    if (scrollY >= triggerPoint) {
-        image2.style.zIndex = '1';  // Задний план для второй карточки
-    }
-});
+}

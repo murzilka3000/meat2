@@ -231,6 +231,7 @@
     line-height: 100%;
     text-transform: uppercase;
     color: #fff;
+    max-width: 230px;
 }
 
 .blog-stories-item-text-container > :last-child  {

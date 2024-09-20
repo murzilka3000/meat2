@@ -6,8 +6,15 @@ const tab2 = document.getElementById('stages-tab2');
 const tabButton1 = document.querySelector('.stages-tabs-button1 button');
 const tabButton2 = document.querySelector('.stages-tabs-button2 button');
 
+// Устанавливаем первый таб и первую кнопку активными по умолчанию
+tab1.style.display = 'flex';
+tab2.style.display = 'none';
+
+tabButton1.classList.add('active');
+tabButton2.classList.remove('active');
+
 BtnTab1.addEventListener('click', () => {
-    tab1.style.display = 'block';
+    tab1.style.display = 'flex';
     tab2.style.display = 'none';
 
     // Активируем первую кнопку, деактивируем вторую

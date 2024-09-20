@@ -47,7 +47,7 @@
   /* ingredients start */
 
   .ingredients {
-    margin-top: 627px;
+    margin-top: 600px;
     background: url('/images/fire-2.svg') right no-repeat, linear-gradient(180deg, #462B74 0%, #8784D6 100%);
     background-size: contain;
     color: #FFF;
@@ -150,6 +150,9 @@
 
 .lifehfk {
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 .lifehfk-bg {
@@ -157,7 +160,7 @@
   height: 150px;
   border-radius: 0 0 50% 50%;
   width: 1700px;
-  transform: translateX(-10%);
+  transform: translateX(0%);
   margin-bottom: 75px;
   padding-top: 30px;
 }
@@ -208,8 +211,7 @@
 
 .stages {
   background: #E0DFFF;
-  padding-top: 300px;
-  padding-bottom: 117px;
+  padding: 300px 20px 117px 20px;
   margin-top: -250px;
 }
 
@@ -387,7 +389,7 @@
 
 .recommendations {
   background-color: #E0DFFF;
-  padding-bottom: 400px;
+  padding: 0 20px 400px 20px;
 }
 
 .recommendations-title {
@@ -402,4 +404,232 @@
 
 .recommendations-title span {
   font-size: 50px;
+}
+
+.hero-block-bg div img {
+  width: 100%;
+}
+
+/* hero-block-bg start */
+
+.hero-block-bg {
+  background: url('/images/recipe-template/bg-rec.svg') no-repeat center top / contain;
+  min-height: 438px;
+  display: flex;
+  align-items: center;
+  padding: 43px 20px;
+  justify-content: space-between;
+}
+
+.hero-block-bg-text-container h2 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  color: #fff;
+  max-width: 381px;
+}
+
+.hero-block-bg-text-container p {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  color: #fff;
+  max-width: 397px;
+}
+
+/* hero-block-bg end */
+
+@media screen and (max-width: 1149px) {
+  .hero-block-bg {
+    border-radius: 20px;
+    background: linear-gradient(0deg, #462b74 0%, #8451da 100%);
+    min-height: none;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 983px) {
+  .hero-block-bg-text-container h2 {
+    font-size: 35px;
+  }
+
+  .hero-block-bg-text-container p {
+    font-size: 15px;
+  }
+
+  .ingredients {
+    background: linear-gradient(180deg, #462B74 0%, #8784D6 100%);
+}
+}
+
+@media screen and (max-width: 832px) {
+  .recommendations {
+    padding: 0 20px 600px 20px;
+}
+}
+
+@media screen and (max-width: 767px) {
+  .cards-container5 {
+    display: flex;
+    gap: 18px;
+    overflow: scroll;
+    min-width: 300px!important;
+  }
+
+  .hero-block-bg {
+    background: none;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero {
+    background: linear-gradient(180deg, #8784D6 30.37%, rgba(135, 132, 214, 0.00) 94.21%);
+    padding: 150px 20px 110px 20px;
+  }
+
+  .hero-block-bg-text-container h2 {
+    color: #462b74;
+  }
+
+  .hero-block-bg-text-container p {
+    font-size: 14px;
+    color: #050505;
+  }
+
+  .ingredients {
+    background: #e0dfff;
+  }
+
+  .ingredients-wrapper {
+    flex-direction: column;
+  }
+
+  .ingredients-wrapper > :first-child {
+    background: linear-gradient(180deg, #8784d6 0%, #7043bc 100%);
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .ingredients-wrapper > :nth-child(2),  .ingredients-wrapper > :nth-child(3) {
+    display: none;
+  }
+
+  .lifehfk-bg {
+    padding-top: 0;
+  }
+
+  .stages-tab1-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .ingredients-mob {
+    background: linear-gradient(180deg, #462b74 0%, #8451da 100%);
+    border-radius: 16px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .ingredients-mob-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .ingredients-mob-title-container h5 {
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 110%;
+    color: #fff;
+  }
+
+  .ingredients-mob-title-container button {
+    background: transparent;
+    border: none;
+  }
+
+  .ingredients-mob > :nth-child(2) {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .ingredients-mob > :nth-child(2) button, .ingredients-buttons-container2 button {
+    font-size: 14px;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+  .ingredients-mob > :nth-child(2) img {
+    max-width: 100%;
+  }
+
+  .ingredients-check1 {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .checkbox-list {
+    margin-bottom: 20px;
+  }
+
+  .ingredients-buttons-container2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .ingredients-wrapper  {
+    gap: 20px;
+  }
+
+  .ingredients {
+    padding-bottom: 20px;
+  }
+
+  .stages-tab1-item > :nth-child(3) > :nth-child(1) {
+    display: none;
+  }
+
+  .stages-tab1-item > :nth-child(3) > :nth-child(2) {
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  .stages-tab1-item > :nth-child(1) p {
+    font-size: 32px;
+  }
+
+  .recommendations-title, .recommendations-title span  {
+    font-size: 24px;
+    text-transform: none;
+    
+  }
+
+  .cards-container5 div {
+    min-width: 238px;
+  }
+}
+
+.cards-container5::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+@media screen and (max-width: 552px) {
+  .recommendations {
+    padding-bottom: 700px;
+  }
 }

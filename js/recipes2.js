@@ -129,6 +129,67 @@ const cardsData = [
         imgSrc: '/images/blog/cards/1.jpg',
         text: 'Родная кухня'
     },
+
+    {
+        category: 'Крупнокусковые',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Крупнокусковые',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Крупнокусковые',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Крупнокусковые',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Фарш',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Фарш',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Фарш',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Для запекания',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Для запекания',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Для запекания',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Для запекания',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
+    {
+        category: 'Для запекания',
+        imgSrc: '/images/blog/cards/1.jpg',
+        text: 'Родная кухня'
+    },
 ];
 
 

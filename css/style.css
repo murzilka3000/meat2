@@ -140,3 +140,35 @@ button {
     cursor: pointer;
 }
 
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('/images/bread.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 8px;
+    margin-bottom: -3px;
+  }
+  
+  .breadcrumb-item a, .breadcrumb .active {
+    color: #FFF;
+    font-family: var(--third-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 15.4px */
+    text-decoration: none;
+  }
+

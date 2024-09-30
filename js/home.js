@@ -43,8 +43,8 @@ document.getElementById('openPopup').addEventListener('click', function() {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-        },
-        loop: true,               // Зацикливание
+        }, 
+        loop: true,              
         autoplay: {
             delay: 10000,            // Задержка между переключениями (в миллисекундах)
             disableOnInteraction: false,  // Не отключать автоплей при взаимодействии с пользователем
@@ -61,6 +61,7 @@ document.getElementById('openPopup').addEventListener('click', function() {
             800: {
                 slidesPerView: 1,
                 spaceBetween: 40,
+                
             },
         },
 
@@ -84,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const subtitles = [
-        'Сочная, натуральная, аппетитная свинина — даём слово!',
-        'Только свежие продукты каждый день!',
-        'Только свежие продукты каждый день!',
-        'Мы заботимся о вашем здоровье!'
+        'Тут будет размещен ваш текст',
+        'Тут будет размещен ваш текст',
+        'Тут будет размещен ваш текст',
+        'Тут будет размещен ваш текст'
     ];
 
     let currentIndex = 0;

@@ -30,6 +30,48 @@ const cardsData = [
         text: 'Новые тенденции в гастрономии'
     },
     {
+        category: 'Больше удовольствия',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/3.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Больше удовольствия',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/3.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Больше удовольствия',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/3.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Что нового',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Что нового',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Что нового',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Что нового',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
         category: 'Что нового',
         date: '15 октября',
         imgSrc: '/images/blog/cards/2.jpg',
@@ -44,7 +86,31 @@ const cardsData = [
     {
         category: 'Лайфхаки',
         date: '15 октября',
-        imgSrc: '/images/blog/cards/6.jpg',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Лайфхаки',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Лайфхаки',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Лайфхаки',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
+        text: 'Новые тенденции в гастрономии'
+    },
+    {
+        category: 'Лайфхаки',
+        date: '15 октября',
+        imgSrc: '/images/blog/cards/2.jpg',
         text: 'Новые тенденции в гастрономии'
     },
     {

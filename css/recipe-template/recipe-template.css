@@ -11,39 +11,6 @@
     right: 0;
     padding: 200px 20px 110px 20px;
   }
-
-  .breadcrumb {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    margin-bottom: 21px;
-  }
-  
-  .breadcrumb-item + .breadcrumb-item::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url('/images/bread.svg');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 0 8px;
-    margin-bottom: -3px;
-  }
-  
-  .breadcrumb-item a, .breadcrumb .active {
-    color: #FFF;
-    font-family: var(--third-family);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 110%; /* 15.4px */
-    text-decoration: none;
-  }
-
   /* ingredients start */
 
   .ingredients {
@@ -130,10 +97,16 @@
 
 .ingredients-buttons > :first-child {
   background: #EA526F;
+  transition: scale 0.3s ease;
 }
 
 .ingredients-buttons > :last-child {
   background-color: transparent;
+  transition: scale 0.3s ease;
+}
+
+.ingredients-buttons > :first-child:hover, .ingredients-buttons > :last-child:hover {
+  scale: 1.07;
 }
 
 .checkbox-list {
@@ -175,6 +148,7 @@
   background-color: #6C42B2;
   border-radius: 20px;
   max-width: 850px;
+  max-height: 130px;
 }
 
 .lifehfk-block {
@@ -303,7 +277,9 @@
 }
 
 
-
+.stages-tab1-item > :last-child > :nth-child(2) {
+  display: none;
+}
 
 .stages-tabs-button1 button {
   border-radius: 13px;
@@ -417,7 +393,7 @@
   min-height: 438px;
   display: flex;
   align-items: center;
-  padding: 43px 20px;
+  padding: 43px 50px;
   justify-content: space-between;
 }
 
@@ -470,12 +446,38 @@
 }
 }
 
+.ingredients-mob {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .cards-container5 {
     display: flex;
     gap: 18px;
     overflow: scroll;
     min-width: 300px!important;
+  }
+
+  .lifehfk-container {
+    max-height: 100%;
+  }
+
+  .lifehfk-container > :nth-child(1) {
+    display: none;
+  }
+
+  .lifehfk-bg {
+    padding-top: 0;
+  }
+
+  .stages-tab1-item > :last-child > :nth-child(2) {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .stages-tab1-item > :last-child > :nth-child(2) {
+    display: inline-block;
+    width: 100%;
   }
 
   .hero-block-bg {
@@ -522,10 +524,6 @@
     display: none;
   }
 
-  .lifehfk-bg {
-    padding-top: 0;
-  }
-
   .stages-tab1-item {
     display: flex;
     flex-direction: column;
@@ -539,6 +537,7 @@
     border-radius: 16px;
     width: 100%;
     padding: 20px;
+    display: block;
   }
 
   .ingredients-mob-title-container {

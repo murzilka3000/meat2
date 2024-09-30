@@ -746,6 +746,10 @@
    
 }
 
+.slider_title-container {
+    margin-right: 200px;
+}
+
 /* partners end */
 
 /* message start */
@@ -976,6 +980,9 @@
     }
 }
 
+.popup_wrapper {
+    max-width: 450px;
+}
 
 .custom-popup {
     display: none;
@@ -1064,7 +1071,7 @@
 
 @media screen and (max-width: 490px) {
     .stores {
-        margin-top: 1450px;
+        margin-top: 1550px;
     }
 }
 
@@ -1491,4 +1498,31 @@ video {
     }
 }
 
+
+.clos-cont {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+.clos-cont button {
+    border-radius: 50%;
+    border: none;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(70, 43, 116, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none!important;
+    }
+
+    .popup {
+        padding: 15px 0px 50px 0px;
+    }
+}
 

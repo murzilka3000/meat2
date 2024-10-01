@@ -172,3 +172,47 @@ button {
     text-decoration: none;
   }
 
+
+  .hero_recipes_wrapper video {
+    width: 100%;
+    max-height: 534px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.hero_recipes .play-pause-btn {
+    position: absolute;
+    top: 55%;
+    z-index: 5;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.play-pause-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#background-video:hover + .play-pause-btn-container .play-pause-btn img {
+    display: block;
+}
+
+.blog-video-wrapper {
+    position: relative; /* Устанавливаем относительное позиционирование для родителя */
+}
+
+.play-pause-btn-container {
+    position: absolute; /* Абсолютное позиционирование внутри родителя */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Смещаем элемент на 50% от его размеров для точного центрирования */
+}
+
+.play-pause-btn {
+    background-color: transparent;
+    border: none;
+}
+

@@ -296,22 +296,6 @@
     text-decoration: none;
 }
 
-.blog-video-wrapper {
-    position: relative; /* Устанавливаем относительное позиционирование для родителя */
-}
-
-.play-pause-btn-container {
-    position: absolute; /* Абсолютное позиционирование внутри родителя */
-    top: 50%; /* Центрируем по вертикали */
-    left: 50%; /* Центрируем по горизонтали */
-    transform: translate(-50%, -50%); /* Смещаем элемент на 50% от его размеров для точного центрирования */
-}
-
-.play-pause-btn {
-    background-color: transparent;
-    border: none;
-}
-
 .slide-mob {
     display: none;
 }

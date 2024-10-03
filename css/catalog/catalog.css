@@ -1,0 +1,151 @@
+@import url('/css/variables.css');
+
+/* catalog-hero start */
+
+.catalog-hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 158px 0 70px 0;
+    background: linear-gradient(180deg, #8784d6 0%, rgba(135, 132, 214, 0) 60%),
+                linear-gradient(360deg, rgba(234, 82, 111, 0.7) 0%, rgba(233, 76, 40, 0) 40%);
+}
+
+.catalog-filters-container {
+    padding: 0!important;
+}
+
+.category-cards-slider-overflow {
+    max-width: 100%!important;
+    padding: 0 20px;
+}
+
+.artcles-cards-slider-item-custom {
+    background: linear-gradient(180deg, #ea526f 0%, #a8203b 100%)!important;
+}
+
+.swiper-button-next22 {
+    border: none;
+    background-color: transparent;
+}
+
+.catalog-filters-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 149px;
+    padding: 0 20px;
+}
+
+.catalog-filters-text h2 {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 110%;
+    color: #462b74;
+}
+
+
+.blog-filters button.active {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .blog-content .content {
+    display: none;
+  }
+  
+  .blog-content .content.active {
+    display: block;
+  }
+
+
+/* catalog-hero end */
+
+
+/* cooking start */
+
+.cooking {
+    background: url('/images/catalog/Fartuk.svg') 
+                no-repeat right/contain, 
+                linear-gradient(180deg, #462B74 0%, #8451DA 100%);
+    padding: 48px 0 105px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 96%, 50% 100%, 0 96%);
+}
+
+.cooking-title {
+    color: #fff!important;
+}
+
+/* cooking end */
+
+.catalg-meat {
+    background: linear-gradient(360deg, #8784d6 0%, rgba(135, 132, 214, 0) 100%);
+    padding: 48px 0 400px 0;
+}
+
+@media screen and (max-width: 832px) { 
+    .catalg-meat {
+        padding-bottom: 600px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .catalog-filters-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 28px;
+    }
+
+    .cooking, .catalg-meat {
+        background: #e0dfff;
+    }
+
+    .catalog-hero {
+        background: linear-gradient(180deg, #8784d6 0%, rgba(135, 132, 214, 0) 100%),
+        linear-gradient(180deg, #8784d6 0%, #e0dfff 100%)
+    }
+
+    .cooking {
+        clip-path: none;
+    }
+
+    .cooking-title {
+        color: #462b74!important;
+    }
+
+    .catalog-hero {
+        padding: 158px 0 52px 0;
+    }
+
+    .cooking {
+       padding-top: 0;
+       padding-bottom: 52px;
+    }
+
+    .catalg-meat {
+        padding-top: 0;
+    }
+
+    .catalog-filters-text h2 {
+        font-size: 32px;
+    }
+
+    .catalog-filters-text a button {
+        font-size: 16px;
+    }
+
+    .catalog-hero .wrapper nav {
+        padding: 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 552px) { 
+    .catalg-meat {
+        padding-bottom: 700px;
+    }
+}
+    

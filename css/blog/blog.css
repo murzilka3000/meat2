@@ -152,8 +152,7 @@
 .blog-stories {
     background: url('/images/fire-blog.svg') no-repeat right bottom / contain,
                 linear-gradient(180deg, #462b74 0%, #8451da 100%);
-    margin-top: 1060px;
-    padding: 300px 20px 50px 20px;
+    padding: 40px 20px 50px 20px;
 }
 
 .blog-stories h2 {
@@ -373,8 +372,7 @@
 
     .blog-stories {
         background: linear-gradient(180deg, #462b74 0%, #8451da 100%);
-        margin-top: 870px;
-        padding: 100px 20px 50px 20px;
+        padding: 40px 20px 50px 20px;
     }
 
     .hero_blog-news {

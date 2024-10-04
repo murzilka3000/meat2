@@ -32,6 +32,11 @@
     gap: 30px;
 }
 
+.category-recommendations-first-block > :first-child,
+.category-recommendations-first-block > :nth-child(2) {
+    flex: 1;
+}
+
 .category-recommendations-first-block-item {
     display: flex;
     align-items: center;
@@ -63,6 +68,15 @@
 .category-bg-block {
     display: flex;
     flex: 1;
+}
+
+.category-bg-block > :first-child {
+    display: flex;
+    align-items: flex-end;
+}
+
+.category-bg-block-img {
+    width: 100%;
 }
 
 .category-bg-block > :nth-child(2) {
@@ -97,6 +111,10 @@
 
 .category-bg-block1 {
     flex: 1;
+}
+
+.artcles-cards-slider-overflow {
+    max-width: 100%!important;
 }
 
 .category-bg-block1 p {
@@ -149,9 +167,18 @@
     background-color: transparent;
 }
 
+.swiper-wrapper {
+    align-items: center;
+}
+
 .category-static-card {
     background: linear-gradient(180deg, #ea526f 56%, #a8203b 100%);
     border-radius: 16px;
+    max-width: 245px;
+}
+
+.category-static-card-img {
+    width: 100%;
 }
 
 .category-static-card > :first-child img {
@@ -191,25 +218,61 @@
 
 /* category-hero end */
 
-
-@media screen and (max-width: 1185px) {
-    
-    .flex-slide-category {
+@media screen and (max-width: 1115px) { 
+    .category-recommendations-first-block {
         flex-direction: column;
-        gap: 20px;
-    }    
-
-    hr {
-        display: none;
     }
 }
 
-@media screen and (max-width: 1111px) {
+@media screen and (max-width: 767px) { 
     .category-bg-block > :nth-child(1) {
         display: none;
     }
 
-    .category-recommendations-first-block {
-        flex-direction: column;
+    .category-recommendations-first-block-item img {
+        display: none;
+    }
+
+    .category-bg-block > :nth-child(2) {
+        padding: 30px;
+    }
+
+    .category-bg-block1 h2  {
+        font-size: 36px;
+        color: #fff;
+    }
+
+    .category-hero-block {
+        background: none;
+        min-height: auto;
+    }
+
+    .category-bg-block1 h3,
+    .category-title {
+        font-size: 24px;
+    }
+
+    .blog-stories-item-text-container h6  {
+        font-size: 20px;
+    }
+
+    .category-sha {
+        margin-bottom: 67px;
+    }
+
+    .category-recommendations {
+        padding: 30px 20px 70px 20px;
+    }
+}
+
+@media screen and (max-width: 832px) {
+    .category-stories {
+        padding-bottom: 600px;
+    }
+}
+
+@media screen and (max-width: 552px) {
+    .category-stories {
+        padding-bottom: 700px;
     }
 }

@@ -38,6 +38,7 @@ window.addEventListener('load', function() {
   adjustMargin('.category-hero', '.category-recommendations'); // Вторая секция
   adjustMargin('.hero_blog', '.blog-stories'); // Вторая секция
   adjustMargin('.catalog-hero', '.cooking'); // Вторая секция
+  adjustMargin('.product-hero', '.product-content'); // Вторая секция
   
   // Пересчитываем отступ при изменении размера окна
   window.addEventListener('resize', function() {
@@ -45,6 +46,7 @@ window.addEventListener('load', function() {
       adjustMargin('.category-hero', '.category-recommendations', '.blog-stories');
       adjustMargin('.hero_blog', '.blog-stories'); // Вторая секция
       adjustMargin('.catalog-hero', '.cooking'); // Вторая секция
+      adjustMargin('.product-hero', '.product-content'); // Вторая секция
   });
 });
 

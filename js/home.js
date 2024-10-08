@@ -261,44 +261,44 @@ const tabs = document.querySelectorAll('[id^="tab"]');
 
 const images = {
     tab1: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/1.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/6.svg'
     },
     tab2: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/2.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/5.svg',
     },
     tab3: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/3.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/4.svg'
     },
     tab4: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/4.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/3.svg'
     },
     tab5: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/5.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/2.svg'
     },
     tab6: {
-        top1: '/images/tab1-1.svg',
-        top2: '/images/tab-1-2.svg',
-        bottom: '/images/tab-1-3.svg'
+        top1: '/images/home-tabs/top1/6.svg',
+        top2: '',
+        bottom: '/images/home-tabs/bottom/1.svg'
     }
 };
 
 const links = {
-    tab1: '/section1',
-    tab2: '/section2',
-    tab3: '/section3',
-    tab4: '/section4',
-    tab5: '/section5',
-    tab6: '/section6'
+    tab1: '/category-item.html',
+    tab2: 'category-item.html',
+    tab3: 'category-item.html',
+    tab4: 'category-item.html',
+    tab5: 'category-item.html',
+    tab6: 'category-item.html'
 };
 
 const titles = {

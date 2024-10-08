@@ -307,19 +307,12 @@
     display: flex;
     gap: 50px;
     align-items: end;
+    justify-content: space-between;
+    padding: 50px 0;
 }
 
 .tab_img-container-top {
     display: flex;
-}
-
-.tab_img-container-top > :last-child {
-    margin-left: -230px;
-    margin-bottom: -100px;
-}
-
-.tab_img-container-bottom img {
-    margin-bottom: -50px;
 }
 
 .activeTab {
@@ -329,16 +322,9 @@
 
 #bottom-img, #top-img-1, #top-img-2 {
     width: 100%;
-
 }
 
-#top-img-1 {
-    max-width: 456px;
-}
 
-#top-img-2 {
-    max-width: 436px;
-}
 
 .tab_title-container {
     margin-left: 50vw;
@@ -351,10 +337,6 @@
 }
 
 @media screen and (max-width: 1198px) {
-    .tab_img-container-top > :last-child {
-        margin-left: -300px;
-        margin-bottom: -100px;
-    }
 
     .tab {
         padding-bottom: 150px;
@@ -1484,7 +1466,7 @@ video {
 
 
 .fade-left2 {
-    animation: fadeLeft 0.5s forwards;
+    animation: fadeLeft 1.4s forwards;
 }
 
 @keyframes fadeLeft {

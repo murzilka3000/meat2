@@ -111,6 +111,73 @@
 /* about-content end */
 
 
+.about-content-text-container21 {
+    display: flex;
+    gap: 60px;
+    margin-top: 53px;
+    padding: 0 20px;
+}
+
+.about-content-text-container21 > :first-child,
+.about-content-text-container21 > :last-child{
+    flex: 1;
+}
+
+.about-content-text-1 {
+    border: 2px solid #462b74;
+    border-radius: 16px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.about-content-text-1-2-custom {
+    margin-bottom: 23px;
+}
+
+.about-content-text-1 > :first-child {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 82%;
+    text-transform: uppercase;
+    color: #462b74;
+    flex: 1;
+}
+
+.about-content-text-2-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-content-text-1-2 {
+        font-family: var(--third-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        color: #462b74;
+}
+
+.about-content-text-1 > :last-child{
+        flex: 1;
+}
+
+.about-content-text-2-12 > :nth-child(2) {
+    border-radius: 16px;
+    background: linear-gradient(182deg, #462b74 0%, #8451da 100%);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content-text-1-2-custom-1 {
+    color: #fff;
+}
+
+
 @media screen and (max-width: 1013px) {
     .hero-about-block {
         gap: 40px;
@@ -142,5 +209,29 @@
 @media screen and (max-width: 552px) {
     .about-content {
         padding-bottom: 700px;
+    }
+}
+
+.hero_recipes_wrapper video {
+    max-height: 100%!important;
+}
+
+@media screen and (max-width: 1000px) {
+    .about-content-text-container21 {
+        flex-direction: column;
+        gap: 23px;
+    }
+
+    .about-content-text-2-12 > :first-child {
+        margin-bottom: 23px;
+    }
+}
+
+@media screen and (max-width: 767px) { 
+    .about-content-text-1  {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 25px;
     }
 }

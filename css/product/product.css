@@ -224,6 +224,10 @@ color: #fff;
     }
 }
 
+.product-hero-title-mob {
+    display: none;
+}
+
 @media screen and (max-width: 846px) {
     .product-hero-container {
         flex-direction: column;

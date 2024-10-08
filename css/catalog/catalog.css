@@ -46,6 +46,34 @@
     color: #462b74;
 }
 
+.swiper-button-next23,
+.swiper-button-next24,
+.swiper-button-next25,
+.swiper-button-next26,
+.swiper-button-next27 {
+    border: none;
+    background-color: transparent;
+}
+
+.cooking2 {
+    padding-bottom: 400px;
+    background: #e0dfff;
+}
+
+@media screen and (max-width: 832px) { 
+    .cooking2 {
+        padding-bottom: 600px;
+    }
+    
+}
+
+@media screen and (max-width:552px) { 
+    .cooking2 {
+        padding-bottom: 700px;
+    }
+    
+}
+
 
 .blog-filters button.active {
     background-color: #333;
@@ -82,12 +110,12 @@
 
 .catalg-meat {
     background: linear-gradient(360deg, #8784d6 0%, rgba(135, 132, 214, 0) 100%);
-    padding: 48px 0 400px 0;
+    padding: 48px 0 50px 0;
 }
 
 @media screen and (max-width: 832px) { 
     .catalg-meat {
-        padding-bottom: 600px;
+        padding-bottom: 50px;
     }
 }
 
@@ -145,7 +173,7 @@
 
 @media screen and (max-width: 552px) { 
     .catalg-meat {
-        padding-bottom: 700px;
+        padding-bottom: 50px;
     }
 }
     

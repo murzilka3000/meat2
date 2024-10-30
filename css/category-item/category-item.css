@@ -89,24 +89,35 @@
     line-height: 110%;
     color: #462b74;
     margin-bottom: 11px;
-    max-width: 332px;
+    max-width: 380px;
 }
 
 .category-bg-block1 {
     flex: 1;
 }
 
+.swiper-container2,
+.swiper-container3,
+.swiper-container21 {
+    overflow: hidden;
+}
+
 .artcles-cards-slider-overflow {
     max-width: 100%!important;
+    overflow: visible!important;
+}
+
+.artcles-cards-slider-item > :nth-child(2) a {
+    text-decoration: none;
 }
 
 .category-bg-block1 p {
     font-family: var(--third-family);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 24px;
     line-height: 140%;
     color: #462b74;
-    max-width: 266px;
+    max-width: 370px;
 }
 
 .flex-slide-category {
@@ -141,6 +152,37 @@
     margin-bottom: 20px;
 }
 
+.swiper-button-next-container-prev {
+    z-index: 2;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: -40px!important;
+}
+
+.swiper-button-next-container {
+    right: -15px!important;
+}
+
+.artcles-cards-slider-item  {
+    max-width: 260px!important;
+}
+
+.swiper-button-prev21,
+.swiper-button-prev3,
+.swiper-button-prev2 {
+    background: transparent;
+    border: none;
+}
+
+.ffref {
+    padding-top: 25px!important;
+}
+
+
+
+
+
 .category-sha {
     margin-bottom: 82px;
 }
@@ -157,7 +199,7 @@
 .category-static-card {
     background: linear-gradient(180deg, #ea526f 56%, #a8203b 100%);
     border-radius: 16px;
-    max-width: 245px;
+    max-width: 260px;
 }
 
 .category-static-card-img {
@@ -173,9 +215,9 @@
 }
 
 .category-static-card > :nth-child(2) > :first-child {
-    font-family: var(--third-family);
+    font-family: var(--font-family);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 24px;
     color: #fff;
     margin-bottom: 24px;
     text-decoration: none;
@@ -257,5 +299,12 @@
 @media screen and (max-width: 552px) {
     .category-stories {
         padding-bottom: 700px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .swiper-button-next-container,
+    .swiper-button-next-container-prev {
+        display: none;
     }
 }

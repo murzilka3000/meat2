@@ -100,7 +100,7 @@
 .hero_blog-card-text p {
     font-family: var(--second-family);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 24px;
     color: #fff;
 }
 
@@ -276,7 +276,7 @@
     border-radius: 16px;
     padding: 10px 20px;
     background: transparent;
-    font-family: var(--second-family);
+    font-family: var(--four-family);
     font-weight: 500;
     font-size: 16px;
     color: #fff;

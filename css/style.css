@@ -7,24 +7,23 @@
 }
 
 @font-face {
-    font-family: 'DIN Alternate';
-    src: url('/fonts/DIN\ Alternate.ttf') format('truetype');
-    font-weight: bold;
+    font-family: 'DINCondensed';
+    src: url('/fonts/DINCondensed-Light.ttf') format('truetype'); /* Подключаем шрифт */
+    font-weight: 400; /* Легкий вес */
     font-style: normal;
 }
 
 @font-face {
-	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 500;
-	src: url('/fonts/Inter.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-family: 'DINCondensed';
+    src: url('/fonts/DINCondensed-Regular.ttf') format('truetype'); /* Подключаем шрифт */
+    font-weight: 700; /* Нормальный вес */
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'DIN Condensed';
-    src: url('fonts/DINCondensed-Regular.woff2') format('woff2');
-    font-weight: bold;
+    font-family: 'Effra';
+    src: url('/fonts/Effra-Medium.ttf') format('truetype');
+    font-weight: 500; /* Вес Medium */
     font-style: normal;
 }
 
@@ -90,8 +89,17 @@ table {
     margin: 0 auto;
 }
 
+.wrapper3 {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+a:visited {
+    text-decoration: none; /* Убирает подчёркивание, если оно есть */
+  }
+
 .pink-button {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 24px;
     line-height: 110%;
     text-align: center;
@@ -100,6 +108,7 @@ table {
     border-radius: 12px;
     padding: 13px 33px;
     background: var(--color-pink);
+    font-family: var(--third-family);
     text-decoration: none;
     transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }

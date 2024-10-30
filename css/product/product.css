@@ -136,6 +136,10 @@ color: #fff;
 
 }
 
+.inl {
+    display: inline!important;
+}
+
 .product-hero-details2 > :nth-child(2) {
     padding-bottom: 22px;
     border-bottom: 1px solid #fff;
@@ -202,21 +206,36 @@ color: #fff;
     font-size: 36px;
 }
 
+.product-hero-details-block3 {
+    gap: 30px;
+}
+
 .product-content-button2 {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
 
+
+.swiper-button-next2 {
+    padding: 0 20px!important;
+}
+
 .category-static-card {
     background: linear-gradient(180deg, #462b74 0.8%, #8451da 100%)!important;
     border-radius: 16px;
-    max-width: 245px;
+    max-width: 253px!important;
 } 
 
 .product-hero-title {
     display: block;
 }
+
+.artcles-cards-slider-overflow {
+    overflow: visible!important;
+}
+
+
 
 @media screen and (max-width: 832px) {
     .product-content {

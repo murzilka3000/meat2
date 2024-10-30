@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next22',
+            prevEl: '.swiper-button-prev22',
         },
         loop: false,
         breakpoints: {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next23',
+            prevEl: '.swiper-button-prev23',
         },
         loop: false,
         breakpoints: {
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next24',
+            prevEl: '.swiper-button-prev24',
         },
         loop: false,
         breakpoints: {
@@ -88,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next25',
+            prevEl: '.swiper-button-prev25',
         },
         loop: false,
         breakpoints: {
@@ -116,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next26',
+            prevEl: '.swiper-button-prev26',
         },
         loop: false,
         breakpoints: {
@@ -144,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next27',
+            prevEl: '.swiper-button-prev27',
         },
         loop: false,
         breakpoints: {

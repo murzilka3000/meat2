@@ -263,7 +263,7 @@
 .artcles-cards-slider-item > :nth-child(2) p{
     font-family: var(--third-family);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 24px;
     color: #fff;
 }
 
@@ -363,7 +363,7 @@
 .artcles-cards-bottom-item > :nth-child(2) > p { 
     font-family: var(--third-family);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 24px;
     color: #fff;
 }
 
@@ -450,7 +450,7 @@
     .artcles-content-item-text, 
     .artcles-cards-slider-item > :nth-child(2) p,
     .artcles-cards-bottom-item > :nth-child(2) > p  {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .artcles-cards-bottom-wrapper h3 span, 

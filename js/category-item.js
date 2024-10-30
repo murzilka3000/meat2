@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
         },
         loop: false,
         breakpoints: {
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next3',
+            prevEl: '.swiper-button-prev3',
         },
         loop: false,
         breakpoints: {
@@ -84,9 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.swiper-container21', {
         slidesPerView: 4, // Number of slides per view
-        spaceBetween: 10, // Space between slides
+        spaceBetween: 5, // Space between slides
         navigation: {
             nextEl: '.swiper-button-next21',
+            prevEl: '.swiper-button-prev21',
         },
         loop: false,
         breakpoints: {

@@ -1,7 +1,8 @@
 :root {
-    --font-family: "DIN Condensed", sans-serif;
-    --second-family: "DIN Alternate", sans-serif;
-    --third-family: "Inter", sans-serif;
+    --font-family: "DINCondensed", sans-serif;
+    --second-family: "DINCondensed", sans-serif;
+    --third-family: "DINCondensed", sans-serif;
+    --four-family: "Effra", sans-serif;
 
     --color-white: #fff;
     --color-purple-dark: #462b74;

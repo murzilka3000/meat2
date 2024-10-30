@@ -35,18 +35,20 @@ function adjustMargin(absoluteBlockSelector, nextBlockSelector) {
 // Вызываем функцию при загрузке страницы
 window.addEventListener('load', function() {
   adjustMargin('.hero-about', '.about-content'); // Первая секция
-  adjustMargin('.category-hero', '.category-recommendations'); // Вторая секция
-  adjustMargin('.hero_blog', '.blog-stories'); // Вторая секция
-  adjustMargin('.catalog-hero', '.cooking'); // Вторая секция
-  adjustMargin('.product-hero', '.product-content'); // Вторая секция
+  adjustMargin('.category-hero', '.category-recommendations');  
+  adjustMargin('.hero_blog', '.blog-stories');  
+  adjustMargin('.catalog-hero', '.cooking');  
+  adjustMargin('.product-hero', '.product-content');  
+  adjustMargin('.hero', '.stores');  
   
   // Пересчитываем отступ при изменении размера окна
   window.addEventListener('resize', function() {
       adjustMargin('.hero-about', '.about-content', '.hero_blog');
       adjustMargin('.category-hero', '.category-recommendations', '.blog-stories');
-      adjustMargin('.hero_blog', '.blog-stories'); // Вторая секция
-      adjustMargin('.catalog-hero', '.cooking'); // Вторая секция
-      adjustMargin('.product-hero', '.product-content'); // Вторая секция
+      adjustMargin('.hero_blog', '.blog-stories');  
+      adjustMargin('.catalog-hero', '.cooking');  
+      adjustMargin('.product-hero', '.product-content');  
+      adjustMargin('.hero', '.stores');  
   });
 });
 

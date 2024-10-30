@@ -64,7 +64,7 @@
 .useful_item-text {
     color: #FFF;
     font-family: var(--third-family);
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -179,7 +179,7 @@
 
 .dropdown-button p {
     color: #462B74;
-    font-family: var(--third-family);
+    font-family: var(--four-family);
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -195,7 +195,7 @@
     background: #462B74;
     border: none;
     color: #FFF;
-    font-family: var(--third-family);
+    font-family: var(--four-family);
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -210,7 +210,7 @@
     gap: 20px;
     align-items: center;
     color: #462B74;
-    font-family: var(--third-family);
+    font-family: var(--four-family);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -233,7 +233,7 @@
 
 .dropdown-content label {
     color: #454545;
-    font-family: var(--third-family);
+    font-family: var(--four-family);
     font-size: 12px;
     font-style: normal;
     font-weight: 500;

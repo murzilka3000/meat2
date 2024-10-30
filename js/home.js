@@ -1,33 +1,75 @@
-//слайдер с наложением
 
-window.addEventListener('scroll', function onScroll() {
-    const scrollY = window.scrollY;  // Текущая позиция скролла
-    const triggerPoint = 300;        // Точка начала анимации первой карточки
-    
-    // Обрабатываем первую карточку (id 'sli2')
-    if (scrollY >= triggerPoint) {
-        var image2 = document.getElementById('sli2');
-        var offset2 = Math.min(scrollY - triggerPoint, 93);  // Сдвигаем напрямую
-        var scale2 = Math.min(1 + (scrollY - triggerPoint) / 500, 1); // Увеличение до 100%
-        var opacity2 = Math.min((scrollY - triggerPoint) / 100, 1);   // Прозрачность до 1
-        
-        image2.style.transform = `translateX(-${offset2}%) scale(${scale2})`;
-        image2.style.opacity = `${opacity2}`;
-        image2.style.zIndex = '1';  // Задний план для второй карточки
+
+let lastScrollTop = 0; // Хранит последнее положение прокрутки
+
+window.addEventListener('scroll', function() {
+    let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+        // Скроллим вниз
+        document.getElementById('sli1').style.transform = 'translateX(-120px)'; // Для sli1
+        document.getElementById('sli2').style.transform = 'translateX(-100px)'; // Для sli2
+        document.getElementById('sli3').style.transform = 'translateX(-50px)'; // Для sli3
+    } else {
+        // Скроллим вверх
+        document.getElementById('sli1').style.transform = 'translateX(20px)'; // Для sli1
+        document.getElementById('sli2').style.transform = 'translateX(0px)'; // Для sli2
+        document.getElementById('sli3').style.transform = 'translateX(0px)'; // Для sli3
+
     }
 
-    // Обрабатываем вторую карточку (id 'sli3')
-    if (scrollY >= triggerPoint + 50) {  // Начинаем через 50px скролла для третьей карточки
-        var image3 = document.getElementById('sli3');
-        var offset3 = Math.min(scrollY - (triggerPoint + 50), 190);  // Сдвиг третьей карточки
-        var scale3 = Math.min(1 + (scrollY - (triggerPoint + 50)) / 500, 1); // Увеличение до 100% для третьей карточки
-        var opacity3 = Math.min((scrollY - (triggerPoint + 50)) / 100, 1);   // Прозрачность до 1 для третьей карточки
-        
-        image3.style.transform = `translateX(-${offset3}%) scale(${scale3})`;
-        image3.style.opacity = `${opacity3}`; 
-        image3.style.zIndex = '2';  // Поднимаем выше второй карточки
-    }
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств
 });
+
+
+
+let previousScrollTop = 0; // Хранит предыдущее положение прокрутки
+let sli5Offset = 0, sli6Offset = 0, sli7Offset = 0; // Смещения для карточек
+
+const maxOffset = 390; // Максимальное смещение для всех карточек
+const speedMultiplier = 2.5; // Коэффициент ускорения
+
+const sli5 = document.getElementById('sli5');
+const sli6 = document.getElementById('sli6');
+const sli7 = document.getElementById('sli7');
+
+// Обработчик события прокрутки
+window.addEventListener('scroll', function () {
+    let currentScrollTop = window.scrollY || document.documentElement.scrollTop; 
+    const scrollDiff = (currentScrollTop - previousScrollTop) * speedMultiplier; // Ускоряем разницу прокрутки
+    const scrollDown = scrollDiff > 0;
+
+    if (scrollDown) {
+        if (sli5Offset < maxOffset) {
+            sli5Offset = Math.min(sli5Offset + scrollDiff, maxOffset);
+            sli5.style.transform = `translateX(${-sli5Offset}px)`;
+        } else if (sli6Offset < maxOffset) {
+            sli6Offset = Math.min(sli6Offset + scrollDiff, maxOffset);
+            sli6.style.transform = `translateX(${-sli6Offset}px)`;
+        } else if (sli7Offset < maxOffset) {
+            sli7Offset = Math.min(sli7Offset + scrollDiff, maxOffset);
+            sli7.style.transform = `translateX(${-sli7Offset}px)`;
+        }
+    } else {
+        if (sli7Offset > 0) {
+            sli7Offset = Math.max(sli7Offset + scrollDiff, 0);
+            sli7.style.transform = `translateX(${-sli7Offset}px)`;
+        } else if (sli6Offset > 0) {
+            sli6Offset = Math.max(sli6Offset + scrollDiff, 0);
+            sli6.style.transform = `translateX(${-sli6Offset}px)`;
+        } else if (sli5Offset > 0) {
+            sli5Offset = Math.max(sli5Offset + scrollDiff, 0);
+            sli5.style.transform = `translateX(${-sli5Offset}px)`;
+        }
+    }
+
+    previousScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+});
+
+
+
+
+
 
 
 
@@ -68,237 +110,27 @@ document.getElementById('openPopup').addEventListener('click', function() {
     });
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const images = [
-        '/images/Шеф 1.svg',
-        '/images/Шеф 1.svg',
-        '/images/Шеф 1.svg',
-        '/images/Шеф 1.svg'
-    ];
-
-    const titles = [
-        'Слово мясника',
-        'Лучший выбор',
-        'Лучший выбор',
-        'Качество еды'
-    ];
-
-    const subtitles = [
-        'Тут будет размещен ваш текст',
-        'Тут будет размещен ваш текст',
-        'Тут будет размещен ваш текст',
-        'Тут будет размещен ваш текст'
-    ];
-
-    let currentIndex = 0;
-
-    const mainTitle = document.getElementById('mainTitle');
-    const subTitle = document.getElementById('subTitle');
-    const mainTitle2 = document.getElementById('mainTitle2');
-    const subTitle2 = document.getElementById('subTitle2');
-    const prevButton = document.getElementById('prevButton');
-    const nextButton = document.getElementById('nextButton');
-    const prevButton2 = document.getElementById('prevButton2');
-    const nextButton2 = document.getElementById('nextButton2');
-    const dotsContainer = document.getElementById('dotsContainer');
-    const dotsContainer2 = document.getElementById('dotsContainer2');
-    const gestureContainer = document.querySelector('.hero_left-block');
-    const hero1 = document.querySelector('.hero1');
-    const heroContainer = document.querySelector('.hero_container');
-
-    function updateContent() {
-        mainTitle.textContent = titles[currentIndex];
-        subTitle.textContent = subtitles[currentIndex];
-        if (mainTitle2) {
-            mainTitle2.textContent = titles[currentIndex];
-        }
-        if (subTitle2) {
-            subTitle2.textContent = subtitles[currentIndex];
-        }
-        updateDots();
-    }
-
-    function animateElements() {
-        hero1.classList.add('fade-out');
-        heroContainer.classList.add('fade-out');
-        if (mainTitle2) {
-            heroContainer.classList.add('fade-out');
-            hero1.classList.add('fade-out');
-        }
-        if (subTitle2) {
-            heroContainer.classList.add('fade-out');
-            hero1.classList.add('fade-out');
-        }
-
-        setTimeout(() => {
-            updateContent();
-            hero1.classList.remove('fade-out');
-            heroContainer.classList.remove('fade-out');
-            if (mainTitle2) {
-              //  mainTitle2.classList.remove('fade-out');
-                heroContainer.classList.remove('fade-out');
-                hero1.classList.remove('fade-out');
-            }
-            if (subTitle2) {
-               // subTitle2.classList.remove('fade-out');
-                heroContainer.classList.remove('fade-out');
-                hero1.classList.remove('fade-out');
-            }
-
-            heroContainer.classList.add('fade-in');
-            hero1.classList.add('fade-in');
-            if (mainTitle2) {
-               // mainTitle2.classList.add('fade-in');
-                heroContainer.classList.add('fade-in');
-                hero1.classList.add('fade-in');
-            }
-            if (subTitle2) {
-              //  subTitle2.classList.add('fade-in');
-                heroContainer.classList.add('fade-in');
-                hero1.classList.add('fade-in');
-            }
-        }, 500); // Время должно совпадать с анимацией в CSS
-
-        setTimeout(() => {
-            heroContainer.classList.remove('fade-in');
-            hero1.classList.remove('fade-in');
-            if (mainTitle2) {
-              //  mainTitle2.classList.remove('fade-in');
-                heroContainer.classList.remove('fade-in');
-                hero1.classList.remove('fade-in');
-            }
-            if (subTitle2) {
-                heroContainer.classList.remove('fade-in');
-                hero1.classList.remove('fade-in');
-            }
-        }, 1000); // Время должно совпадать с анимацией в CSS
-    }
-
-    function createDots() {
-        images.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                animateElements();
-            });
-            dotsContainer.appendChild(dot);
-            if (dotsContainer2) {
-                const dot2 = dot.cloneNode(true);
-                dot2.addEventListener('click', () => {
-                    currentIndex = index;
-                    animateElements();
-                });
-                dotsContainer2.appendChild(dot2);
-            }
-        });
-    }
-
-    function updateDots() {
-        const dots = document.querySelectorAll('#dotsContainer .dot');
-        const dots2 = document.querySelectorAll('#dotsContainer2 .dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-        dots2.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    if (prevButton) {
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            animateElements();
-        });
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            animateElements();
-        });
-    }
-
-    if (prevButton2) {
-        prevButton2.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            animateElements();
-        });
-    }
-
-    if (nextButton2) {
-        nextButton2.addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            animateElements();
-        });
-    }
-
-    createDots();
-    updateContent();
-
-    // Добавление поддержки жестов
-    if (typeof Hammer !== 'undefined') {
-        const hammer = new Hammer(gestureContainer);
-        hammer.on('swipeleft', () => {
-            console.log('Swipe left detected');
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            animateElements();
-        });
-
-        hammer.on('swiperight', () => {
-            console.log('Swipe right detected');
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            animateElements();
-        });
-    } else {
-        console.error('Hammer.js is not loaded');
-    }
-});
 // табы начало
 
 const tabs = document.querySelectorAll('[id^="tab"]');
+const tabContainer = document.querySelector('.tab'); // Находим элемент с классом .tab
 
 const images = {
-    tab1: {
-        top1: '/images/home-tabs/top1/1.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/6.svg'
-    },
-    tab2: {
-        top1: '/images/home-tabs/top1/2.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/5.svg',
-    },
-    tab3: {
-        top1: '/images/home-tabs/top1/3.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/4.svg'
-    },
-    tab4: {
-        top1: '/images/home-tabs/top1/4.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/3.svg'
-    },
-    tab5: {
-        top1: '/images/home-tabs/top1/5.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/2.svg'
-    },
-    tab6: {
-        top1: '/images/home-tabs/top1/6.svg',
-        top2: '',
-        bottom: '/images/home-tabs/bottom/1.svg'
-    }
+    tab1: { top1: '/images/home-tabs/top1/1.svg', top2: '', bottom: '/images/home-tabs/bottom/6.svg' },
+    tab2: { top1: '/images/home-tabs/top1/2.svg', top2: '', bottom: '/images/home-tabs/bottom/5.svg' },
+    tab3: { top1: '/images/home-tabs/top1/3.svg', top2: '', bottom: '/images/home-tabs/bottom/4.svg' },
+    tab4: { top1: '/images/home-tabs/top1/4.svg', top2: '', bottom: '/images/home-tabs/bottom/3.svg' },
+    tab5: { top1: '/images/home-tabs/top1/5.svg', top2: '', bottom: '/images/home-tabs/bottom/2.svg' },
+    tab6: { top1: '/images/home-tabs/top1/6.svg', top2: '', bottom: '/images/home-tabs/bottom/1.svg' }
 };
 
 const links = {
     tab1: '/category-item.html',
-    tab2: 'category-item.html',
-    tab3: 'category-item.html',
-    tab4: 'category-item.html',
-    tab5: 'category-item.html',
-    tab6: 'category-item.html'
+    tab2: '/category-item.html',
+    tab3: '/category-item.html',
+    tab4: '/category-item.html',
+    tab5: '/category-item.html',
+    tab6: '/category-item.html'
 };
 
 const titles = {
@@ -310,10 +142,21 @@ const titles = {
     tab6: 'Кулинария'
 };
 
+// Добавляем объект с фонами для каждого таба
+const backgrounds = {
+    tab1: 'url("../images/bgtab3.jpg")',
+    tab2: 'url("../images/bgtab2.jpg")',
+    tab3: 'url("../images/bgtab2.jpg")',
+    tab4: 'url("../images/bgtab2.jpg")',
+    tab5: 'url("../images/bgtab2.jpg")',
+    tab6: 'url("../images/bgtab2.jpg")'
+};
+
 function switchTab(activeTabId) {
     tabs.forEach(tab => {
         tab.classList.remove('activeTab');
     });
+
     const activeTab = document.getElementById(activeTabId);
     activeTab.classList.add('activeTab');
 
@@ -323,32 +166,34 @@ function switchTab(activeTabId) {
     const sectionLink = document.getElementById('section-link');
     const tabTitle = document.getElementById('tab-title');
 
-    // Удалить предыдущие анимации
+    // Удаляем предыдущие анимации
     topImg1.classList.remove('fade-left2');
     topImg2.classList.remove('fade-left2');
     bottomImg.classList.remove('fade-left2');
     sectionLink.classList.remove('fade-left2');
     tabTitle.classList.remove('fade-left2');
 
-    // Принудительно перерисовать элементы для повторной анимации
+    // Принудительно перерисовываем для анимации
     void topImg1.offsetWidth;
     void topImg2.offsetWidth;
     void bottomImg.offsetWidth;
     void sectionLink.offsetWidth;
     void tabTitle.offsetWidth;
 
-    // Обновить содержимое
+    // Обновляем содержимое
     topImg1.src = images[activeTabId].top1;
     topImg2.src = images[activeTabId].top2;
     bottomImg.src = images[activeTabId].bottom;
     sectionLink.href = links[activeTabId];
     tabTitle.innerText = titles[activeTabId];
 
-    // Добавить анимации
+    // Меняем фон в элементе .tab
+    tabContainer.style.backgroundImage = backgrounds[activeTabId];
+
+    // Добавляем анимации
     topImg1.classList.add('fade-left2');
     topImg2.classList.add('fade-left2');
     bottomImg.classList.add('fade-left2');
-    //sectionLink.classList.add('fade-left2');
     tabTitle.classList.add('fade-left2');
 }
 
